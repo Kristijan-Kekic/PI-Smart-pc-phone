@@ -9,3 +9,4 @@
 - Prototip: https://www.figma.com/file/522E8KyVTVsv4HY1sqro16/PI-projekt
 - Zaduženja (planirana) po članu tima:
 - HTML i Javascript - Kristijan Kekić
+- CSS, manje HTML i Javascript - Rino Malbašić
