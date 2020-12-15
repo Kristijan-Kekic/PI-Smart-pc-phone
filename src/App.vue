@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="navbar navbar-light">
+      <router-link to="/kosarica">Košarica</router-link> |
+      <router-link to="/">Naslovnica</router-link> |
+      <router-link to="/login-reg">Prijava</router-link> |
+      <router-link to="/registracija">Registracija</router-link>
     </div>
     <router-view/>
   </div>
