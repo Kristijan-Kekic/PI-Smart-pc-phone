@@ -16,6 +16,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Pregled-PC.vue')
   },
   {
+    path: '/Kosarica',
+    name: 'Kosarica',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Kosarica.vue')
+  },
+    {
     path: '/Home/Slaganje-PC',
     name: 'Slaganje-PC',
     component: () => import(/* webpackChunkName: "about" */ '../views/Slaganje-PC.vue')

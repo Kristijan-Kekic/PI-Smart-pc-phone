@@ -5,10 +5,10 @@
       <router-link to="/">Naslovnica</router-link> |
       <router-link to="/login-reg">Prijava</router-link> |
       <router-link to="/registracija">Registracija</router-link>
-    </div>
+      </div>
     <router-view/>
   </div>
-</template>
+ </template>
 
 <style lang="scss">
 #app {
