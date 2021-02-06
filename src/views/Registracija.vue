@@ -1,6 +1,5 @@
 <template>
 <div class="container login-container">
-    <logo />
     <div class="br"><br></div>
             <div class="row">
               <div class="col-3"></div>
@@ -32,7 +31,6 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue';
 import { firebase } from '@/firebase';
 
 export default {
@@ -58,10 +56,7 @@ export default {
             },
     },
 
-    name:'login-reg',
-    components: { 
-    Logo,
-       },  
+  
 };
 </script>
 

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-      <logo />
         <div class="d-grid gap-3 col-4 mx-auto">
           <div class="col-5 mx-auto">
           <router-link class="rl" to="/Home/Pregled-PC">Pregled konfiguracije (PC)</router-link>
