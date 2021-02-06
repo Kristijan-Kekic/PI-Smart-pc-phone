@@ -19,6 +19,12 @@
                             <input type="button" class="btnSubmit" value="Prijavi se" />
                         </div>
                     </form>
+                    <div class="reg">
+                        <p>Nemaš račun? Registriraj se ispod!</p>
+                        <div class="form-group">
+                        <router-link class="rl" to="/Registracija">Registriraj se!</router-link>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3"></div>
             </div>

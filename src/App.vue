@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav" class="navbar navbar-light">
-      <router-link to="/kosarica">Košarica</router-link> |
-      <router-link to="/">Naslovnica</router-link> |
-      <router-link to="/login-reg">Prijava</router-link> |
-      <router-link to="/registracija">Registracija</router-link>
-      </div>
-    <router-view/>
+    <Navbar/>
   </div>
- </template>
+</template>
+
+<script>
+import Navbar from '@/components/Navbar'
+export default {
+  name: 'App',
+  components: {
+    Navbar
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -10,7 +10,7 @@
 import Logo from '@/components/Logo.vue';
 
 export default {
-  name: 'slahanje-pc',
+  name: 'slaganje-pc',
   components: {
     Logo,
   },
