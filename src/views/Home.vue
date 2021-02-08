@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style>
+
+body{
+  background-color:aqua;
+}
 .col-4{
   padding:2%;
   }

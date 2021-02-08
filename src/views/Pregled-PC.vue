@@ -1,23 +1,31 @@
 <template>
-  <div class="home">
-        <div class="row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-8"></div>
-        </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-2">
+    <Selekcija-p />
+    </div>
+    <div class="col-2"></div>
+    <div class="col-6">
+      <Grid-p />
+    </div>
+    <div class="col-1"></div>
+  </div>
+        
   </div>
 
   </template>
 
 <script>
+import SelekcijaP from '@/components/SelekcijaP'
+import GridP from '@/components/GridP.vue'
+export default {
+  name: 'Pregled-PC',
+  components: {
+    SelekcijaP,
+    GridP
+  }
+}
 </script>
 
 <style>
-.col-sm-2{
-  border-style:solid;
-  height:500px;
-}
-.col-sm-8{
-   border-style:solid;
-}
-
 </style>
