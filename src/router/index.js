@@ -25,6 +25,12 @@ const routes = [
     name: 'Slaganje-PC',
     component: () => import(/* webpackChunkName: "about" */ '../views/Slaganje-PC.vue')
   },
+    {
+  path: '/Slaganje-PC/RAM',
+  name: 'RAM',
+  component: () => import(/* webpackChunkName: "about" */ '../views/RAM.vue')
+  },
+
   {
     path: '/Home/BPPK',
     name: 'Best-Price-Performace-Komponente',
