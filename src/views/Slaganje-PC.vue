@@ -4,15 +4,21 @@
       <div class="row">
         <div class="col mx-auto">
           <router-link class="rl" to="/Slaganje-PC/RAM">RAM</router-link>
-          <div>GPU</div> 
-          <div>CPU</div> 
-          <div>Maticna</div>
-          <div>PSU</div>
-          <div>HDD/SDD</div>              
+          <br>
+          <router-link class="rl" to="/Slaganje-PC/GPU">GPU</router-link>
+          <br>
+          <router-link class="rl" to="/Slaganje-PC/CPU">CPU</router-link>
+          <br>
+          <router-link class="rl" to="/Slaganje-PC/Maticna">Maticna ploca</router-link> 
+          <br>
+          <router-link class="rl" to="/Slaganje-PC/PSU">PSU</router-link>
+          <br>
+          <router-link class="rl" to="/Slaganje-PC/HDD-SSD">HDD-SSD</router-link>
+                        
         
         </div>
         <div class="col mx-auto">
-
+          <br>
           <div class="col-md-4">
           <b>Slaganje konfiguracije</b>
           </div>
@@ -37,7 +43,8 @@
               <div class= "col-md-2">
               HDD/SDD: nije odabrano
               </div>
-
+        <br>
+        <router-link class="rl" to="/">Natrag</router-link>
         </div>
       </div>  
     </div>      
@@ -83,12 +90,7 @@ width:500px;
 height:50px;
 border-color:black;
 border-style:solid;
-
-
-}
-
-
-</style>
+}</style>
 
 <script>
 </script>

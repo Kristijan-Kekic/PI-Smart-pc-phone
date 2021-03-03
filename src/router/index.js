@@ -30,6 +30,36 @@ const routes = [
   name: 'RAM',
   component: () => import(/* webpackChunkName: "about" */ '../views/RAM.vue')
   },
+  
+  {
+  path: '/Slaganje-PC/GPU',
+  name: 'GPU',
+  component: () => import(/* webpackChunkName: "about" */ '../views/GPU.vue')
+  },
+
+  {
+    path: '/Slaganje-PC/CPU',
+    name: 'CPU',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CPU.vue')
+    },
+
+    {
+      path: '/Slaganje-PC/Maticna',
+      name: 'Maticna',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Maticna.vue')
+      },
+
+      {
+        path: '/Slaganje-PC/PSU',
+        name: 'PSU',
+        component: () => import(/* webpackChunkName: "about" */ '../views/PSU.vue')
+        },
+        
+        {
+          path: '/Slaganje-PC/HDD-SSD',
+          name: 'HDD-SSD',
+          component: () => import(/* webpackChunkName: "about" */ '../views/HDD-SSD.vue')
+          },
 
   {
     path: '/Home/BPPK',
