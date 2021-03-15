@@ -37,7 +37,8 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select>
-  <div class="col-sm-1"><b>Potvrda odabira</b></div>
+  <button class="button" type="button" onclick="funkcija()">Potvrda odabira</button>
+  
   <br>
   <router-link class="rl" to="/Home/Slaganje-PC">Natrag</router-link>
   <div>Trebas pomoc?</div>      
@@ -51,6 +52,8 @@
 
 <script>
 
+
+
 </script>
 
 <style>
@@ -63,18 +66,24 @@ border-color:black;
 border-style:solid;
 }
 
-.col-sm-1{
-  background-color:white;
-  margin:auto;
-  width:200px;
-  padding:10px;
-  border-color:black;
-border-style:solid;
-}
-
 .col-lg-6{
 background-color:aqua;
 padding:60px;
 margin:auto;
 border-color:black;
-border-style:solid;}</style>
+border-style:solid;}
+
+.button {
+  border-radius: 4px;
+  background-color: #39c648;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 250px;
+  margin: 5px;
+}
+
+
+</style>

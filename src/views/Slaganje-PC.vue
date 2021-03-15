@@ -3,17 +3,23 @@
     <div class="container">
       <div class="row">
         <div class="col mx-auto">
-          <router-link class="rl" to="/Slaganje-PC/RAM">RAM</router-link>
           <br>
-          <router-link class="rl" to="/Slaganje-PC/GPU">GPU</router-link>
+          <router-link to="/Slaganje-PC/RAM"><img src="../assets/images/ram.png"></router-link>
           <br>
-          <router-link class="rl" to="/Slaganje-PC/CPU">CPU</router-link>
           <br>
-          <router-link class="rl" to="/Slaganje-PC/Maticna">Maticna ploca</router-link> 
+          <router-link to="/Slaganje-PC/GPU"><img src="../assets/images/gpu.png"></router-link>
           <br>
-          <router-link class="rl" to="/Slaganje-PC/PSU">PSU</router-link>
           <br>
-          <router-link class="rl" to="/Slaganje-PC/HDD-SSD">HDD-SSD</router-link>
+          <router-link to="/Slaganje-PC/CPU"><img src="../assets/images/cpu.png"></router-link>
+          <br>
+          <br>
+          <router-link to="/Slaganje-PC/Maticna"><img src="../assets/images/maticna.png"></router-link> 
+          <br>
+          <br>
+          <router-link to="/Slaganje-PC/PSU"><img src="../assets/images/psu.jpg"></router-link>
+          <br>
+          <br>
+          <router-link to="/Slaganje-PC/HDD-SSD"><img src="../assets/images/hdd-sdd.jpg"></router-link>
                         
         
         </div>
@@ -45,6 +51,7 @@
               </div>
         <br>
         <router-link class="rl" to="/">Natrag</router-link>
+        <div>Trebas pomoc?</div>
         </div>
       </div>  
     </div>      
