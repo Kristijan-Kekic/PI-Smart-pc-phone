@@ -10,30 +10,7 @@
         <option value="4">Four</option>
       </select>
     
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Odaberi</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
-      </select>
-    
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Odaberi</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
-      </select>
-    
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Odaberi</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
-      </select>
-  <button class="button" type="button" onclick="funkcija()">Potvrda odabira</button>
+      <button class="button" type="button">Potvrda odabira</button>
   <br>
   <router-link class="rl" to="/Home/Slaganje-PC">Natrag</router-link>
   <div>Trebas pomoc?</div>      
@@ -41,6 +18,14 @@
   </div>
 
 </template>
+
+<script>
+
+export default {
+    name: 'OdabirS'
+}
+</script>
+
 
 <style scoped>
 .col-lg-6{
@@ -67,10 +52,3 @@ border-style:solid;
 </style>
 
 
-
-<script>
-
-export default {
-    name: 'OdabirS'
-}
-</script>
