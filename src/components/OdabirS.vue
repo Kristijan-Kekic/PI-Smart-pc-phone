@@ -4,10 +4,6 @@
     
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Odaberi</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
       </select>
     
       <button class="button" type="button">Potvrda odabira</button>
@@ -32,8 +28,9 @@ export default {
 background-color:aqua;
 padding:60px;
 margin:auto;
-border-color:black;
+border-color:lightgray;
 border-style:solid;
+border-width: 1px;
 }
 
 .button {

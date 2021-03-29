@@ -42,7 +42,8 @@ body{
   }
 
 .col-5{
-  background:#e8eaea;
+  border-radius: 10px;
+  background:#f1f5f5;
   width:100%;
   height:100%;
   padding:4.5%;

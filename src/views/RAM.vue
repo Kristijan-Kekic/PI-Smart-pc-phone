@@ -5,6 +5,7 @@
   <br>
   <OdabirS />
   
+  
   </div>  
 
 </template>
@@ -20,14 +21,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .container-md-2{
-background-color:white;
+background-color: #f8f9fa;
 margin: 20px 0px 0px 0px;
 height:700px;
-border-color:black;
-border-style:solid;
+border-color:#f8f9fa;
+  border-style: solid;
+  border-width: 1px;
 }
 
 </style>

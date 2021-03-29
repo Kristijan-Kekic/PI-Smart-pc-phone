@@ -66,8 +66,10 @@
 
 .col{
 height: 800px;
-border-color:black;
-border-style:solid;
+background-color: #f8f9fa;
+border-color:#f8f9fa;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .col-md-4{
@@ -76,8 +78,9 @@ background:white;
 padding:15px;
 width:650px;
 height:60px;
-border-color:black;
-border-style:solid;
+border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .col-md-3{
@@ -85,8 +88,9 @@ margin:25px;
 padding:15px;
 width:600px;
 height:60px;
-border-color:black;
-border-style:solid;  
+border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .col-md-2{
@@ -95,8 +99,9 @@ margin:20px 0px 0px 70px;
 padding:10px;
 width:500px;
 height:50px;
-border-color:black;
-border-style:solid;
+border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
 }</style>
 
 <script>

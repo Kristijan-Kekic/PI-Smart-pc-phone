@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-    <div class="col">Filter
+    <div class="col-1-sm">
+      <div class="div1"><router-link class="rl" to="/">Natrag</router-link></div>
+    <div class="div2">Filter</div>
     <ul class="list-group">
   <li class="list-group-item">Preference</li>
   <li class="list-group-item">Kamera</li>
@@ -15,81 +17,101 @@
 
     </div>
     
-    <div class="col-7">
-    <div class="box">Samsung</div>
-    <div class="box">iPhone</div>
-    <div class="box">Huawei</div>
-    <div class="box">Samsung</div>
-    <div class="box">Huawei</div>
+    <div class="col-7-sm">
+      <div class="col-5-sm">
+        <p class="div3">Sortiraj prema:</p>
+      </div>
+      <div class="row align-items-start" style="margin: 50px 0px 0px 10px">
+       
+        <proizvod />
+        
+      </div>    
+
+      <div class="row">
+      <proizvod />
     
+        </div>
     
     </div>
     
-
-    
-    </div>      
+     </div>      
   </div>
 
   </template>
 
 <script>
-  function filterObjekt(c){
-    var x,i;
-    x=document.getElementByClassName("box");
-    if(c=="sve") c=="";
-    for(i=0; i < x.length; i++){
-      removeClass(x[i], "prikazi");
-      if(x[i].className.indexOf(c) > -1) dodajObjekt(x[i], "prikazi")
-    }
-  }
+import Proizvod from '@/components/Proizvod.vue'
+export default {
+  name: 'Mobitel',
+  components:{
+      Proizvod,
+    
 
-function dodajObjekt(element, ime){
-  var i, polje1, polje2;
-  polje1 = element.className.split(" ");
-  polje2 = name.split(" ");
-  for(i=0; i<polje2.length; i++){
-    if(polje1.indexOf(polje2[i]) == -1){
-      element.className == " " + polje2[i];
-    }
   }
 }
-
-function makniObjekt(element, ime){
-  var i, polje1, polje2;
-  polje1 = element.className.split(" ");
-  polje2 = name.split(" ");
-  for(i=0; i<polje2.length; i++){
-    while(polje1.indexOf(polje2[i]) > -1){
-      polje1.splice(polje1.indexOf(polje2[i]),1);
-    }
-    }
-  element.className = polje1.join(" ");
-  }
-
-
-
-
 </script>
 
 <style>
 
-.box{
-  margin: 10px;
-  width:150px;
-  height:100px;
-  border-style:solid;
+.row{
+  margin:10px;
 }
 
-.col{
-  border-style:solid;
-  height:750px;
+.col-1-sm{
   
+  background-color: #f8f9fa;
+  height:750px;
+  margin: 0px 10px 0px 0px;
+  padding:15px;
+  width:300px;
+
 }
-.col-7{
-  border-style:solid;
+.col-7-sm{
+  
+  background-color: #f8f9fa;
   width:900px;
 
   }
+
+.col-5-sm{
+  margin:10px;
+}
+
+  .list-group{
+  border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
+  }
+
+.div1{
+  font-size: 20px;
+  padding:5px;
+  margin:0px 0px 10px 0px;
+  background-color: white;
+  border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
+  
+  }
+
+.div2{
+  font-size: 20px;
+  padding:5px;
+  border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.div3{
+  float:right;
+  background-color: white;
+  border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
+  width:300px;
+  text-align: left;
+  
+}
 
 
 </style>

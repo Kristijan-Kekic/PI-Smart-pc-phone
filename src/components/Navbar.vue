@@ -7,7 +7,7 @@
           </router-link>
         </div>
         <div class="col-1"></div>
-        </router-link>
+        
         <div class="col-6" id="naslovnica">
         <router-link to="/">
     <img alt="Vue logo" width="100%" src="../assets/images/logo.png">
