@@ -1,41 +1,80 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
+    
+    <br>
+
     <div class="row">
-    <div class="col-1-sm">
-      <div class="div1"><router-link class="rl" to="/">Natrag</router-link></div>
-    <div class="div2">Filter</div>
-    <ul class="list-group">
-  <li class="list-group-item">Preference</li>
-  <li class="list-group-item">Kamera</li>
-  <li class="list-group-item">Performance</li>
-  <li class="list-group-item">Cijena</li>
-  <li class="list-group-item">Baterija</li>
-  <li class="list-group-item">Ekran</li>
-</ul>
     
-    
+    <div class="col-lg-3">
+        <p class="natrag-m"><router-link class="rl" to="/" >Natrag</router-link></p>
+    </div>  
 
-    </div>
-    
-    <div class="col-7-sm">
-      <div class="col-5-sm">
-        <p class="div3">Sortiraj prema:</p>
-      </div>
-      <div class="row align-items-start" style="margin: 50px 0px 0px 10px">
+        <div class="col-lg-9">
        
-        <proizvod />
-        
-      </div>    
 
-      <div class="row">
-      <proizvod />
-    
-        </div>
-    
+          <div class="s-prema">
+           <select class="form-select" aria-label="Default select example">
+              <option selected>Sortiraj prema:</option>
+              <option value="1">Uzlazno</option>
+              <option value="2">Silazno</option>
+            
+            </select>
+          </div>
+
+
+
+      </div>
     </div>
     
+    <div class="row">
+          <div class="col-lg-3">
+             <div class="filter">Filter</div>
+                <ul class="list-group">
+                  <li class="list-group-item">Preference</li>
+                  <li class="list-group-item">Kamera</li>
+                  <li class="list-group-item">Performance</li>
+                  <li class="list-group-item">Cijena</li>
+                  <li class="list-group-item">Baterija</li>
+                  <li class="list-group-item">Ekran</li>
+                </ul>
+          
+          
+
+          </div>
+          
+          <div class="col-lg-9">
+              <div class="row">
+                <div class="col-lg"> 
+
+                  <proizvod />
+                  <br>
+                  <proizvod />     
+
+                </div>
+
+                <div class="col-lg">
+                
+                <proizvod />
+                <br>
+                <proizvod />            
+                
+                </div>
+                
+                <div class="col-lg">
+
+                <proizvod /> 
+                <br>
+                <proizvod />    
+
+                </div>
+
+                </div>  
+              </div>
      </div>      
-  </div>
+
+    </div>
+
+  
 
   </template>
 
@@ -49,68 +88,74 @@ export default {
 
   }
 }
+    
 </script>
 
 <style>
 
-.row{
-  margin:10px;
-}
 
-.col-1-sm{
+.col-lg{
   
   background-color: #f8f9fa;
-  height:750px;
-  margin: 0px 10px 0px 0px;
+  height : 800px;
+  
+  
+
+  }
+
+.col-lg-3{
+  
+  background-color: #f8f9fa;
+  border: solid aqua;
+  border-width: 0px 7px 0px;
   padding:15px;
-  width:300px;
-
 }
-.col-7-sm{
+
+
+.col-lg-9{
   
+  border:solid aqua;
+  border-width: 0px 7px 0px;
   background-color: #f8f9fa;
-  width:900px;
+  padding:15px;
+
 
   }
 
-.col-5-sm{
-  margin:10px;
-}
-
-  .list-group{
+ .list-group{
   border-color:lightgray;
   border-style: solid;
   border-width: 1px;
   }
 
-.div1{
-  font-size: 20px;
-  padding:5px;
-  margin:0px 0px 10px 0px;
+
+.filter{
   background-color: white;
   border-color:lightgray;
   border-style: solid;
   border-width: 1px;
+}  
+
+.natrag-m{
+  font-size: 20px;
+  background-color: white;
+  border-color:lightgray;
+  border-style: solid;
+  border-width: 1px;
+  width:200px;
+  margin:auto;
+    
+  }
+
+.s-prema{
   
-  }
-
-.div2{
-  font-size: 20px;
-  padding:5px;
-  border-color:lightgray;
-  border-style: solid;
-  border-width: 1px;
-}
-
-.div3{
-  float:right;
   background-color: white;
   border-color:lightgray;
   border-style: solid;
   border-width: 1px;
-  width:300px;
+  width:150px;
   text-align: left;
-  
+  margin:auto;
 }
 
 

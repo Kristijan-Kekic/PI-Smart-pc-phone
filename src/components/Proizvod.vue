@@ -22,6 +22,7 @@ export default {
 <style scoped>
 
 .card{
+    margin:auto;
     width: 300px;
     height: 300px;
 }
