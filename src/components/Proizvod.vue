@@ -23,15 +23,20 @@ export default {
 
 .card{
     margin:auto;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 12px;
     width: 300px;
-    height: 300px;
+    height: 350px;
+    display: inline-block;
+    
 }
 
 .slika{
     border-width: 1px;
     border-color: lightgray;
     border-style: solid;
-    height:200px;
+    height:250px;
 }
 
 </style>
