@@ -8,7 +8,7 @@
     
       <button class="button" type="button">Potvrda odabira</button>
   <br>
-  <router-link class="rl" to="/Home/Slaganje-PC">Natrag</router-link>
+  <p class="natrag-m"><router-link class="rl" to="/Home/Slaganje-PC"><img src="../assets/ikone/arrow-left.svg" width="20" height="20" style="margin-bottom:5px;"> Natrag</router-link></p>
   <div>Trebas pomoc?</div>      
   
   </div>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .col-lg-6{
-background-color:aqua;
+background-color:rgb(114, 218, 236);
 padding:60px;
 margin:auto;
 border-color:lightgray;
@@ -34,10 +34,10 @@ border-width: 1px;
 }
 
 .button {
-  border-radius: 4px;
-  background-color: #39c648;
-  border: none;
+ background-color:rgb(36, 114, 160);
+  border-color:rgb(55, 144, 196) ;
   color: #FFFFFF;
+  border-radius: 10px;
   text-align: center;
   font-size: 20px;
   padding: 20px;

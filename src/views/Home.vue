@@ -32,7 +32,7 @@ export default {
 <style>
 
 body{
-  background-color:aqua;
+  background-color:rgb(114, 218, 236);
 }
 .col-4{
   padding:2%;
@@ -43,13 +43,12 @@ body{
 
 .col-5{
   border-radius: 10px;
-  background:#f1f5f5;
+  background:white;
   width:100%;
   height:100%;
   padding:4.5%;
-  border-style:solid;
-  border-width: 1px;
-  border-color:#e8eaea;
+  box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
+border: 1px solid lightgrey;
 }
 
 .rl{

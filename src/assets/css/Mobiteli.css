@@ -1,0 +1,135 @@
+/* Grid */
+
+.col-lg-1{
+  
+    background-color: #f8f9fa;
+    margin:auto;
+    width:420px;
+    height:282px;
+    
+    }
+  
+    .col-lg-3{
+    
+      background-color: #f8f9fa;
+      
+      border-width: 0px 3px 0px;
+      padding:15px;
+    }
+  
+    .col-lg-6{
+    
+    background-color: #f8f9fa;
+    padding:0px;
+    margin-bottom: 12px;
+    width:625px;
+    
+    }
+  
+  .col-lg-9{
+    
+    
+    border-width: 0px 3px 0px;
+    background-color: #f8f9fa;
+    padding:15px;
+    }
+  
+   .natrag-m{
+    font-size: 20px;
+    background-color: white;
+    border-color:lightgray;
+    border-style: solid;
+    border-width: 1px;
+    width:200px;
+    margin:auto;
+   }
+    
+  
+  .naslov{
+    
+    background-color: white;
+    border-color:lightgray;
+    border-style: solid;
+    border-width: 1px;
+    width:300px;
+    padding:5px;
+    margin:auto;
+    float:left;
+    margin-left:35px;
+    margin-top:10px;
+    }
+  
+  
+  .s-prema{
+    
+    background-color: white;
+    border-color:lightgray;
+    border-style: solid;
+    border-width: 1px;
+    width:150px;
+    margin:auto;
+    float:right;
+    margin-right:40px;
+    margin-top:10px;
+    }
+  
+  /* Filter */
+  
+  /* reset our lists to remove bullet points and padding */
+  
+  .col-lg-1,
+  .podlista {
+    list-style: none;
+    padding: 0px;
+    margin: auto;
+    width:400px;
+    
+  }
+  
+  
+  /* make ALL links (main and submenu) have padding and background color */
+  
+  
+  .col-lg-1 label {
+    display: block;
+    background-color: white;
+    border-color:lightgray;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    
+  }
+  
+  .col-lg-1 input {
+    display: none;
+  }
+  
+  
+  /* add hover behaviour */
+  
+  .col-lg-1 li:hover {
+    background-color: #C5C5C5;
+    
+  }
+  
+  
+  .col-lg-1 :checked+.podlista {
+    display: block;
+    max-height: 200px;
+    
+  }
+  
+  .podlista li:hover {
+    background-color: rgb(143, 208, 228);
+    
+  }
+  
+  
+  .podlista {
+    overflow: hidden;
+    max-height: 0;
+    transition-property: height;
+    width:auto;
+  }

@@ -34,4 +34,9 @@ export default {
 #naslovnica{
   border-style:solid;
 }
+
+.navbar{
+box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
+border: 1px solid lightgrey;
+}
 </style>
