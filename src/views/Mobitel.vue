@@ -12,7 +12,7 @@
 
 
             <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-12">
                   <div class="row"> 
                                   
                     <ul class="col-lg-1">
