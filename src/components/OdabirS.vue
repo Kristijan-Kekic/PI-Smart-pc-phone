@@ -2,9 +2,31 @@
     
     <div class="col-lg-6">
     
+     <!--<div id="v-model-select-dynamic" class="demo">
+  <select v-model="selected">
+    <option v-for="option in options" v-bind:key="option.key">
+      {{ option.text }}
+    </option>
+  </select>
+  
+  <br>
+  
+</div>-->
+
+
+  
+
+
+
+     <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Odaberi</option>
+      </select>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Odaberi</option>
       </select>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Odaberi</option>
+      </select> -->
     
       <button class="button" type="button">Potvrda odabira</button>
   <br>
@@ -18,19 +40,18 @@
 <script>
 
 export default {
-    name: 'OdabirS'
-}
+    name: 'OdabirS',
+    }
+
 </script>
 
 
 <style scoped>
 .col-lg-6{
 background-color:rgb(114, 218, 236);
-padding:60px;
+box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
 margin:auto;
-border-color:lightgray;
-border-style:solid;
-border-width: 1px;
+border: 1px solid lightgrey;
 }
 
 .button {

@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-1"></div>
         <div class="col-1">
-          <router-link class="rl" to="/Košarica">Košarica
+          <router-link class="rl" to="/Košarica"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Košarica
           </router-link>
         </div>
         <div class="col-1"></div>
@@ -38,5 +38,8 @@ export default {
 .navbar{
 box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
 border: 1px solid lightgrey;
+margin:30px 30px 0px 30px;
 }
+
+
 </style>

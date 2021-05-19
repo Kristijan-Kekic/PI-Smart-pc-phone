@@ -1,17 +1,17 @@
 <template>
  
-    <div class="container-fluid">
-      <br>
+    <div class="container-fluid py-4">
+      
       <div class="row justify-content-center">
         <div class="col-lg-5">
           <br>
-            <div class="row justify-content-center">
+            <div class="row">
             <div class="col-lg-3" style="border:1px solid red; width:500px">
                 
                       <img style="width:400px; height:300px;" src="../assets/images/pc.jpg">
                   </div>  
                   
-                  <div class="col-lg-3" style="border:1px solid red">
+                  <div class="col-lg" style="border:1px solid red">
                         <router-link to="/Slaganje-PC/RAM"><img src="../assets/images/ram.png"></router-link>
                         
                         <router-link to="/Slaganje-PC/GPU"><img src="../assets/images/gpu.png"></router-link>
@@ -19,15 +19,15 @@
                   </div>
                 </div>  
             <br>
-            <div class="row justify-content-center">
-            <div class="col-lg-3" style="border:1px solid red; width:500px">      
+            <div class="row">
+            <div class="col-lg" style="border:1px solid red; width:500px">      
                   <router-link to="/Slaganje-PC/CPU"><img src="../assets/images/cpu.png"></router-link>
                   
                   <router-link to="/Slaganje-PC/Maticna"><img src="../assets/images/maticna.png"></router-link> 
                  
             </div>
             <br>
-            <div class="col-lg-3" style="border:1px solid red"> 
+            <div class="col-lg" style="border:1px solid red"> 
                   <router-link to="/Slaganje-PC/PSU"><img src="../assets/images/psu.jpg"></router-link>
                
                   <router-link to="/Slaganje-PC/HDD-SSD"><img src="../assets/images/hdd-sdd.jpg"></router-link>
@@ -43,7 +43,7 @@
                           
                           <div class="box1"><b>Slaganje konfiguracije</b></div>
                                                   
-                          <div class="box2"> Klikni na svaku od komponenata da krenes sa odabirom</div>
+                          <div class="box2"> Klikni na svaku od komponenata da kreneš sa odabirom</div>
                           
                           </div>
                                 <div class="col-lg-2">
@@ -67,7 +67,7 @@
                           </div>
 
                           <div class="col-lg-1">
-                          <div class="pomoc">Trebas pomoc?</div>
+                          <div class="pomoc">Trebas pomoć?</div>
                           </div>
                         </div>  
                        </div> 

@@ -1,42 +1,17 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid py-4">
     
-   <br> 
+    <div class="row justify-content-center">
+      <div class="col-lg-2" style="box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747); background-color: #f8f9fa; border-width: 0px 3px 0px; padding:15px; margin-right:5px;">
+        <div class="row">
+             
+              <div class="col-lg-3">
+              <Natrag />
+              </div>  
+         </div>
 
-    <div class="row">
-    
-          <div class="col-lg-3">
-              <p class="natrag-m"><router-link class="rl" to="/"><img src="../assets/ikone/arrow-left.svg" width="20" height="20" style="margin-bottom:5px;"> Natrag</router-link></p>
-          </div>  
 
-        
-
-              <div class="col-lg-9">
-          
             <div class="row">
-                  <div class="col-lg">
-                  <p class="naslov">Mobiteli na raspolaganju</p>    
-                  </div>
-
-                    <div class="col-lg"></div>
-
-                    <div class="col-lg">
-                    <div class="s-prema">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Sortiraj prema:</option>
-                        <option value="1">Uzlazno</option>
-                        <option value="2">Silazno</option>
-                      
-                      </select>
-                    </div>
-                    </div>
-              </div>
-
-
-            </div>
-    </div>
-    
-    <div class="row">
               <div class="col-lg-3">
                   <div class="row"> 
                                   
@@ -96,69 +71,109 @@
 
 
               </div>
-              
+
+            </div>
+
+      </div>
+
+    <div class="col-lg-9" style="box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747); border-width: 0px 3px 0px; background-color: #f8f9fa; margin-left:5px;">
+
+            <div class="row">
+            
+            <div class="col-lg-12">
+          
+            <div class="row">
+                  <div class="col-lg" style="margin-left:45px;">
+                  <p class="naslov">Mobiteli na raspolaganju</p>    
+                  </div>
+
+                    <div class="col-lg"></div>
+
+                    <div class="col-lg" style="margin-right:50px;">
+                    <div class="s-prema">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Sortiraj prema:</option>
+                        <option value="1">Uzlazno</option>
+                        <option value="2">Silazno</option>
+                      
+                      </select>
+                    </div>
+                    </div>
+              </div>
 
 
+            </div>
+          </div>
 
-              <div class="col-lg-9">
+          <div class="row">
+
+              <div class="col-lg-12" style="margin-bottom:15px;">
                   <div class="row justify-content-center">
-                    <div class="col-lg-6"> 
+                   
 
                       <proizvod />
                       <proizvod />
-                          
-
-                    </div>
-
-                  <div class="col-lg-6"> 
-
                       <proizvod />
                       <proizvod />
-                          
-
-                    </div>
-
-                
-
+                      
+                      
                   </div>  
 
                   <div class="row justify-content-center">
           
-                    <div class="col-lg-6"> 
+                   
 
                       <proizvod />
                       <proizvod />
+                      <proizvod />
+                      <proizvod />
+                      
                           
 
                     </div>
 
-                <div class="col-lg-6"> 
+                  <div class="row justify-content-center">
+                   
 
                       <proizvod />
                       <proizvod />
-                          
+                      <proizvod />
+                      <proizvod />
+                      
+                      
+                  </div>  
 
-                    </div>
-
-                  </div>   
+              </div>   
 
               </div>
-     </div>      
+
+          
 
     </div>
+
+  </div>
+
+</div>      
+  
+  
 
   
 
   </template>
 
 <script>
-
 import Proizvod from '@/components/Proizvod.vue'
+import Natrag from '@/components/Natrag.vue'
 export default {
   name: 'Mobitel',
   components:{
       Proizvod,
+      Natrag,
+  },
+  methods:{
+
     
+
 
   }
 }
