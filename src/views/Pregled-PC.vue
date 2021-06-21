@@ -120,7 +120,7 @@
 
   
 
-  </template>
+</template>
 
 <script>
 import Proizvod_pc from '@/components/Proizvod_pc.vue'
@@ -208,12 +208,9 @@ export default {
   methods: {
 
   getPcs() {
-      console.log("firebase dohvat...")
 
       db.collection('pcs').get().then((query) =>{
         query.forEach((doc) => {
-          console.log(doc.id)
-          console.log(doc.data())
 
           const data = doc.data();
 
@@ -231,28 +228,28 @@ export default {
     },
 
   filterNamjena: function(pcs) {
-    let nam = this.store.searchNamjena;
+    let nam = (this.store.searchNamjena).toLowerCase();
     return pcs.filter(pc => pc.namjena.indexOf(nam) >= 0);
 
   },
 
   filterProc: function(pcs) {
-    let proc = this.store.searchProcesor;
+    let proc = (this.store.searchProcesor).toLowerCase();
     return pcs.filter(pc => pc.procesor.indexOf(proc) >= 0);
   },
 
   filterGraf: function(pcs) {
-    let graf = this.store.searchGraficka;
+    let graf = (this.store.searchGraficka).toLowerCase();
     return pcs.filter(pc => pc.graficka.indexOf(graf) >= 0);
   },
 
   filterRAM: function(pcs) {
-    let ram = this.store.searchRAM;
+    let ram = (this.store.searchRAM).toLowerCase();
     return pcs.filter(pc => pc.ram.indexOf(ram) >= 0);
   },
 
   filterHD: function(pcs) {
-    let hdsd = this.store.searchHD;
+    let hdsd = (this.store.searchHD).toLowerCase();
     return pcs.filter(pc => pc.hd.indexOf(hdsd) >= 0);
   },
 

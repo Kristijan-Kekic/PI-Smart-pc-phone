@@ -106,7 +106,7 @@
 
   
 
-  </template>
+</template>
 
 <script>
 import Proizvod_mob from '@/components/Proizvod_mob.vue'
@@ -178,18 +178,18 @@ export default {
   methods: {
 
   filterPreferenca: function(mobs) {
-    let pref = this.store.searchPreferenca;
+    let pref = (this.store.searchPreferenca).toLowerCase();
     return mobs.filter(mob => mob.preferenca.indexOf(pref) >= 0);
 
   },
 
   filterBaterija: function(mobs) {
-    let bat = this.store.searchBaterija;
+    let bat = (this.store.searchBaterija).toLowerCase();
     return mobs.filter(mob => mob.baterija.indexOf(bat) >= 0);
   },
 
   filterEkran: function(mobs) {
-    let ekr = this.store.searchEkran;
+    let ekr = (this.store.searchEkran).toLowerCase();
     return mobs.filter(mob => mob.ekran.indexOf(ekr) >= 0);
   },
 

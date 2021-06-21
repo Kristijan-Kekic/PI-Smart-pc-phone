@@ -30,8 +30,7 @@
     
       <button class="button" type="button">Potvrda odabira</button>
   <br>
-  <p class="natrag-m"><router-link class="rl" to="/Home/Slaganje-PC"><img src="../assets/ikone/arrow-left.svg" width="20" height="20" style="margin-bottom:5px;"> Natrag</router-link></p>
-  <div>Trebas pomoc?</div>      
+  <p class="natrag-m"><router-link class="rl" to="/Home/Slaganje-PC"><img src="../assets/ikone/arrow-left.svg" width="20" height="20" style="margin-bottom:5px;"> Natrag</router-link></p>   
   
   </div>
 

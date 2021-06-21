@@ -11,11 +11,11 @@ export default {
     searchBaterija: '',
     searchEkran: '',
 
-    searchSLganjeRAM: '',
-    searchSLganjeGPU: '',
-    searchSLganjeCPU: '',
-    searchSLganjeMaticna: '',
-    searchSLganjePSU: '',
-    searchSLganjeMemorija: '',
+    searchSLaganjeRAM: '',
+    searchSLaganjeGPU: '',
+    searchSLaganjeCPU: '',
+    searchSLaganjeMaticna: '',
+    searchSLaganjePSU: '',
+    searchSLaganjeMemorija: '',
 
 }
