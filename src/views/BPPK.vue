@@ -1,92 +1,102 @@
 <template>
-  <div class="row">
-  <div class="col-4"></div>
-  <div class="col-4">
-  <!-- nova forma za post -->
-  <form @submit.prevent="postNewItem" class="form-inline mb-5">
-  <div class="form-group">
-  <label for="naziv">Naziv</label>
-  <input
-    v-model="naziv"
-    type="text"
-    class="form-control ml-2"
-    placeholder="Naziv"
-    id="naziv"
-  />
-  </div>
-  <div class="form-group">
-  <label for="gpuscore">Gpuscore</label>
-  <input
-    v-model="gpuscore"
-    type="text"
-    class="form-control ml-2"
-    placeholder="Gpuscore"
-    id="gpuscore"
-  />
-  </div>
-  <div class="form-group">
-  <label for="snaga">Watts</label>
-  <input
-    v-model="power"
-    type="text"
-    class="form-control ml-2"
-    placeholder="Snaga"
-    id="snaga"
-  />
-  </div>
-  <div class="form-group">
-  <label for="cijena">Cijena</label>
-  <input
-  v-model="cijena"
-    type="text"
-    class="form-control ml-2"
-    placeholder="cijena"
-    id="cijena"
-  />
-  </div>
-  <button type="submit" class="btn btn-primary ml-2">Post
-  image</button>
-  </form>
- <div class="col-4"></div>
-</div>
-</div>
+  <div class="container-fluid">
+    <br>
+    <div class=row>
+      <div class="col-1"></div>
+      <div id="bppkview" class="col">Top procesori <br>
+        <div class="row">
+        <div class="col-6" id="lista">Naziv</div>
+        <div class="col-2" id="lista">Score</div>
+        <div class="col-2" id="lista">Snaga(W)</div>
+        <div class="col-2" id="lista">Cijena</div>
+        </div> <br>
+         <BPPKCPU v-for="cpu in bppkcpus" :key="cpu.id" :info="cpu" />
+         <br>
+      </div>
+      <div class="col-1"></div>
+      <div id="bppkview" class="col">Top grafičke kartice
+        <div class="row">
+        <div class="col-6" id="lista">Naziv</div>
+        <div class="col-2" id="lista">Score</div>
+        <div class="col-2" id="lista">Snaga(W)</div>
+        <div class="col-2" id="lista">Cijena</div>
+        </div> <br>
+        <BPPKCPU v-for="gpu in bppkgpus" :key="gpu.id" :info="gpu" />
+        <br>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div> 
 
 </template>
 
 <script>
 import store from '@/store.js'
 import { db } from '@/firebase.js'
+import BPPKCPU from '@/components/BPPKCPU.vue'
+import BPPKGPU from '@/components/BPPKGPU.vue'
 
 export default {
 name: 'BPPK',
 data: function() {
   return {
-    naziv: '',
-    gpuscore: '',
-    power: '',
-    cijena: ''
+    bppkcpus : [],
+    bppkgpus : [],
   }
 },
-methods: {
-  postNewItem() {
-    const naziv = this.naziv
-    const gpuscore = parseFloat(this.gpuscore)
-    const power = parseInt(this.power)
-    const cijena = parseInt(this.cijena)
-
-    db.collection('bppkgpu').add({
-      naziv: naziv,
-      score: gpuscore,
-      snaga: power,
-      cijena: cijena
-    })
-    .then((doc) => {
-      console.log("spremljeno", doc)
-    })
-    .catch((e) => {
-      console.error(e);
-    });
+components:{
+    BPPKCPU,
+    BPPKGPU
   },
+mounted() {
+    this.getCpus();
+    this.getGpus();
+  },
+methods: {
+    getCpus() {
+
+      db.collection('bppkcpu').orderBy('score', 'desc').get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.bppkcpus.push({
+             id: data.id,
+             naziv: data.naziv,
+             score: data.score,
+             snaga: data.snaga,
+             cijena: data.cijena + ' kn'
+          })
+        })
+      })
+    },
+
+    getGpus() {
+
+      db.collection('bppkgpu').orderBy('score', 'desc').get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.bppkgpus.push({
+             id: data.id,
+             naziv: data.naziv,
+             score: data.score,
+             snaga: data.snaga,
+             cijena: data.cijena + ' kn'
+          })
+        })
+      })
+    },
+
+
+  
 }
 }
 </script>
+
+<style>
+#bppkview {
+  background-color: white;
+}
+</style>
