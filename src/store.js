@@ -5,5 +5,9 @@ export default {
     searchRAM: '',
     searchHD: '',
     searchCijenaMin: '',
-    searchCijenaMax: ''
+    searchCijenaMax: '',
+
+    searchPreferenca: '',
+    searchBaterija: '',
+    searchEkran: ''
 }
