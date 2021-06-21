@@ -9,5 +9,13 @@ export default {
 
     searchPreferenca: '',
     searchBaterija: '',
-    searchEkran: ''
+    searchEkran: '',
+
+    searchSLganjeRAM: '',
+    searchSLganjeGPU: '',
+    searchSLganjeCPU: '',
+    searchSLganjeMaticna: '',
+    searchSLganjePSU: '',
+    searchSLganjeMemorija: '',
+
 }
