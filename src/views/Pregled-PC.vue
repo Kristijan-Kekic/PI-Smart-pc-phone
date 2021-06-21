@@ -126,8 +126,9 @@
 import Proizvod_pc from '@/components/Proizvod_pc.vue'
 import Natrag from '@/components/Natrag.vue'
 import store from '@/store.js'
+import { db } from '@/firebase.js'
 
-let pcs = [];
+/* let pcs = [];
 
 pcs = [
 {
@@ -177,11 +178,13 @@ pcs = [
 
 ];
 
+*/
+
 export default {
   name: 'Pregled_PC',
   data: function() {
     return {
-      pcs,
+      pcs : [],
       store,
       range : "1",
       range2 : "10000"
@@ -191,6 +194,11 @@ export default {
       Proizvod_pc,
       Natrag,
   },
+
+  mounted() {
+    this.getPcs();
+  },
+
   computed: {
    filteredpcs() {
      return this.filterProc(this.filterRAM(this.filterCijenaMin(this.filterCijenaMax(this.filterNamjena(this.filterGraf(this.filterHD(this.pcs)))))))
@@ -198,6 +206,29 @@ export default {
   },
 
   methods: {
+
+  getPcs() {
+      console.log("firebase dohvat...")
+
+      db.collection('pcs').get().then((query) =>{
+        query.forEach((doc) => {
+          console.log(doc.id)
+          console.log(doc.data())
+
+          const data = doc.data();
+
+          this.pcs.push({
+             id: data.id,
+             namjena: data.namjena,
+             procesor: data.procesor,
+             graficka: data.graficka,
+             ram: data.ram,
+             hd: data.hd,
+             cijena: data.cijena
+          })
+        })
+      })
+    },
 
   filterNamjena: function(pcs) {
     let nam = this.store.searchNamjena;
