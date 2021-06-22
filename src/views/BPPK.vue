@@ -3,7 +3,7 @@
     <br>
     <div class=row>
       <div class="col-1"></div>
-      <div id="bppkview" class="col">Top procesori <br>
+      <div id="bppkview" class="col">Top procesori po omjeru ulozeno/dobiveno<br>
         <div class="row">
         <div class="col-6" id="lista">Naziv</div>
         <div class="col-2" id="lista">Score</div>
@@ -14,7 +14,7 @@
          <br>
       </div>
       <div class="col-1"></div>
-      <div id="bppkview" class="col">Top grafičke kartice
+      <div id="bppkview" class="col">Top grafičke kartice po omjeru ulozeno/dobiveno
         <div class="row">
         <div class="col-6" id="lista">Naziv</div>
         <div class="col-2" id="lista">Score</div>

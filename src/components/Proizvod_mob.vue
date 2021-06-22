@@ -4,7 +4,7 @@
   <div class="slika"></div>
   <div class="card-body">
     <h5 class="card-title">Ime mob {{info.naslov}} <br> {{info.cijena}} <br> {{info.ekran}} <br>
-    <a href="#" class="btn btn-primary"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Dodaj u kosaricu</a>
+    <a href="#" class="btn btn-primary"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Dodaj u listu želja</a>
     </h5>
   </div>
 </div>

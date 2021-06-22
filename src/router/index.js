@@ -11,8 +11,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/Home/Pregled-PC',
-    name: 'Pregled/Konfiguracija/PC',
+    path: '/Pregled-PC',
+    name: 'Pregled-PC',
     component: () => import(/* webpackChunkName: "about" */ '../views/Pregled-PC.vue')
   },
   {
@@ -21,17 +21,17 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Wishlist.vue')
   },
     {
-    path: '/Home/Slaganje-PC',
+    path: '/Slaganje-PC',
     name: 'Slaganje-PC',
     component: () => import(/* webpackChunkName: "about" */ '../views/Slaganje-PC.vue')
   },
     {
-    path: '/Home/BPPK',
+    path: '/BPPK',
     name: 'Best-Price-Performace-Komponente',
     component: () => import(/* webpackChunkName: "about" */ '../views/BPPK.vue')
   },
   {
-    path: '/Home/Mobitel',
+    path: '/Mobitel',
     name: 'Mobitel',
     component: () => import(/* webpackChunkName: "about" */ '../views/Mobitel.vue')
   },

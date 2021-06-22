@@ -219,7 +219,17 @@
            
             </div>
           <div class="row justify-content-center">  
-      <div class="col-lg-6"><div class="box1"> Ukupna cijena :</div></div>
+            <div class="col-lg-6"><div class="box1"> Ukupna cijena : 
+                {{
+                  parseInt(productRAM.selectedRAM.cijena) + 
+                  parseInt(productGPU.selectedGPU.cijena) + 
+                  parseInt(productCPU.selectedCPU.cijena) +
+                  parseInt(productMaticna.selectedMaticna.cijena) + 
+                  parseInt(productPSU.selectedPSU.cijena) +
+                  parseInt(productMemorija.selectedMemorija.cijena)
+                }} kn
+            </div>
+          </div>
       </div>
       </div>
     
@@ -249,8 +259,8 @@
     productRAM: {
       selectedRAM: {
         id: 1,
-        naziv: 'Nije odabran RAM',
-        radmemorija: 'Nije odabran RAM',
+        naziv: 'Nije odabrano',
+        radmemorija: 'Nije odabrano',
         cijena: '0'
         
       }
@@ -258,9 +268,9 @@
   
     RAMs: [
       {id: 0, naziv:'Nije odabrano' , radmemorija:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'aaaa' , radmemorija:'r', cijena: 0 },
+      {id: 1, naziv:'aaaa' , radmemorija:'r', cijena: 100 },
       {id: 2, naziv:'bbbb' , radmemorija:'r', cijena: 0 },
-      {id: 3, naziv:'cccc' , radmemorija:'r', cijena: 0 },
+      {id: 3, naziv:'cccc' , radmemorija:'r', cijena: 100 },
       {id: 4, naziv:'aaab' , radmemorija:'r', cijena: 0 },
       {id: 5, naziv:'ccdd' , radmemorija:'r', cijena: 0 },
       
@@ -269,8 +279,8 @@
 productGPU: {
       selectedGPU: {
         id: 1,
-        naziv: 'Nije odabran GPU',
-        graprocesor: 'Nije odabran GPU',
+        naziv: 'Nije odabrano',
+        graprocesor: 'Nije odabrano',
         cijena: '0'
         
       }
@@ -278,19 +288,19 @@ productGPU: {
   
     GPUs: [
       {id: 0, naziv:'Nije odabrano' , graprocesor:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'g' , graprocesor:'g', cijena: 0 },
-      {id: 2, naziv:'g' , graprocesor:'g', cijena: 0 },
-      {id: 3, naziv:'g' , graprocesor:'g', cijena: 0 },
-      {id: 4, naziv:'g' , graprocesor:'g', cijena: 0 },
-      {id: 5, naziv:'g' , graprocesor:'g', cijena: 0 },
+      {id: 1, naziv:'g' , graprocesor:'g', cijena: 10 },
+      {id: 2, naziv:'g' , graprocesor:'g', cijena: 20 },
+      {id: 3, naziv:'g' , graprocesor:'g', cijena: 40 },
+      {id: 4, naziv:'g' , graprocesor:'g', cijena: 60 },
+      {id: 5, naziv:'g' , graprocesor:'g', cijena: 80 },
       
     ],
 
     productCPU: {
       selectedCPU: {
         id: 1,
-        naziv: 'Nije odabran CPU',
-        procesor: 'Nije odabran CPU',
+        naziv: 'Nije odabrano',
+        procesor: 'Nije odabrano',
         cijena: '0'
         
       }
@@ -310,8 +320,8 @@ productGPU: {
   productMaticna: {
       selectedMaticna: {
         id: 1,
-        naziv: 'Nije odabrana Matična Ploča',
-        mploca: 'Nije odabrana Matična Ploča',
+        naziv: 'Nije odabrano',
+        mploca: 'Nije odabrano',
         cijena: '0'
         
       }
@@ -330,8 +340,8 @@ productGPU: {
     productPSU: {
       selectedPSU: {
         id: 1,
-        naziv: 'Nije odabran PSU',
-        nap: 'Nije odabrana PSU',
+        naziv: 'Nije odabrano',
+        nap: 'Nije odabrano',
         cijena: '0'
         
       }
@@ -350,8 +360,8 @@ productGPU: {
     productMemorija: {
       selectedMemorija: {
         id: 1,
-        naziv: 'Nije odabrana Memorija',
-        mem: 'Nije odabrana Memorija',
+        naziv: 'Nije odabrano',
+        mem: 'Nije odabrano',
         cijena: '0'
         
       }

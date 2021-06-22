@@ -44,12 +44,13 @@ export default {
     methods : {
         login() {
             console.log("login...")
-
             firebase
                 .auth()
                 .signInWithEmailAndPassword(this.username, this.password)
-                .then(function(result) {
+                .then((result) => {
                     console.log("Uspjesno", result);
+                    this.$router.replace({name: 'Home'})
+
                 })
                 .catch(function(e) {
                     console.log("greska", e)
