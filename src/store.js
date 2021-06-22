@@ -1,4 +1,5 @@
 export default {
+
     searchProcesor: '',
     searchNamjena: '',
     searchGraficka: '',
@@ -11,18 +12,13 @@ export default {
     searchBaterija: '',
     searchEkran: '',
 
-    searchSLaganjeRAM: '',
-    searchSLaganjeGPU: '',
-    searchSLaganjeCPU: '',
-    searchSLaganjeMaticna: '',
-    searchSLaganjePSU: '',
-    searchSLaganjeMemorija: '',
-
     CPUFilter: '',
     GPUFilter: '',
     RAMFilter: '',
     MPFilter: '',
     PSUFilter: '',
     HDFilter: '',
+
+    currentUser: null,
 
 }

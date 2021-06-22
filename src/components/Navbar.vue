@@ -8,25 +8,52 @@
         </div>
         <div class="col-1"></div>
         
-        <div class="col-6" id="naslovnica">
+        <div class="col-4-center" id="naslovnica">
         <router-link to="/">
     <img alt="Vue logo" width="100%" src="../assets/images/logo.png">
       </router-link>
         </div>
         <div class="col-1"></div>
-      <div class="col-1">
+        <div class="col-1" v-if="!store.currentUser">
           <router-link class="rl" to="/Login-reg">Prijava/registracija
           </router-link>
-        <div class="col-1"></div>
-        </div>
+      </div>
+      <div class="col-1"><a href ="#" @click.prevent="logout()">Logout</a> </div>
       </nav>
     <router-view/>
   </div>
- </template>
+</template>
 
 <script>
+import { firebase } from '@/firebase'
+import store from '@/store.js'
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.currentUser = user.email
+  }
+  else {
+    store.currentUser = null;
+  }
+})
 export default {
   name: 'Navbar',
+  data: function() {
+    return {
+      store,
+    }
+  },
+
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push({ name: 'Login/registracija'})
+      });
+    }
+
+  }
 };
 </script>
 

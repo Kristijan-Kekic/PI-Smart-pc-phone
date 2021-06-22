@@ -4,7 +4,7 @@
   <div class="slika"></div>
   <div class="card-body">
     <h5 class="card-title">Ime pca {{info.naslov}} <br> {{info.cijena}} <br> {{info.procesor}} <br>
-    <div class="form-group">
+    <div class="form-group" v-if="store.currentUser">
       <input type="button" @click="newWishlist()" value="Dodaj u wishlist"/> 
     </div>
     </h5>
@@ -17,12 +17,14 @@
 
 <script>
 import { db } from '@/firebase.js'
+import store from '@/store.js'
 
 export default {
   props: ['info'],
   name : 'Proizvod_pc',
   data: function() {
     return {
+      store,
     }
   },
 
@@ -37,14 +39,15 @@ export default {
 
       db.collection("wishlist").add({
         namjena: this.info.namjena,
-        cijena: this.info.cijena
+        cijena: this.info.cijena,
+        user: this.store.currentUser
       })
       .then(() => {
         console.log("dobar")
       })
       .catch((e) => {
         console.log("ne radi", e)
-      })
+      }) 
 
 
     }
