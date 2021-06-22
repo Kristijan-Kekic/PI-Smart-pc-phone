@@ -3,10 +3,8 @@
 <div class="card">
   <div class="slika"></div>
   <div class="card-body">
-    <h5 class="card-title">Ime pca {{info.naslov}} <br> {{info.cijena}} <br> {{info.procesor}} <br>
-    <div class="form-group" v-if="store.currentUser">
-      <input type="button" @click="newWishlist(info)" value="Dodaj u wishlist"/> 
-    </div>
+    <h5 class="card-title">Ime pca<br> {{info.cijena}} <br> {{info.namjena}} <br>
+    <input type="button" @click="deleteWishlist(info.id)" value="Makni"/>
     </h5>
   </div>
 </div>
@@ -16,39 +14,27 @@
 </template>
 
 <script>
-import { db } from '@/firebase.js'
 import store from '@/store.js'
+import { db } from '@/firebase.js'
 
 export default {
   props: ['info'],
-  name : 'Proizvod_pc',
+  name : 'Proizvod_wishpc',
   data: function() {
     return {
       store,
     }
   },
-
-  computed: {
-
-  },
-
   methods: {
-    newWishlist() {
-
-      db.collection("wishlist").add({
-        namjena: this.info.namjena,
-        cijena: this.info.cijena,
-        user: this.store.currentUser
-      })
-      .then(() => {
-        console.log("dobar")
-      })
-      .catch((e) => {
-        console.log("ne radi", e)
-      }) 
+    deleteWishlist(id) {
+    db.collection("wishpcs").doc(id).delete().then(() => {
+    console.log("Document successfully deleted!");
+    }).catch((error) => {
+    console.error("Error removing document: ", error);
+});
 
 
-    }
+  }
   }
 }
 </script>
