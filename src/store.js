@@ -18,4 +18,11 @@ export default {
     searchSLaganjePSU: '',
     searchSLaganjeMemorija: '',
 
+    CPUFilter: '',
+    GPUFilter: '',
+    RAMFilter: '',
+    MPFilter: '',
+    PSUFilter: '',
+    HDFilter: '',
+
 }

@@ -16,9 +16,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Pregled-PC.vue')
   },
   {
-    path: '/Kosarica',
-    name: 'Kosarica',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Kosarica.vue')
+    path: '/Wishlist',
+    name: 'Wishlist',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Wishlist.vue')
   },
     {
     path: '/Home/Slaganje-PC',

@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-1"></div>
         <div class="col-1">
-          <router-link class="rl" to="/Košarica"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Lista želja
+          <router-link class="rl" to="/Wishlist"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Lista želja
           </router-link>
         </div>
         <div class="col-1"></div>

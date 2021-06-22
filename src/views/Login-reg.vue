@@ -7,15 +7,15 @@
                     <h3>Prijava</h3>
                     <form>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                            <input type="email" v-model="username" class="form-control" placeholder="Email *" value="" />
                         </div>
                         <div class="br"><br></div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Lozinka *" value="" />
+                            <input type="password" v-model="password" class="form-control" placeholder="Lozinka *" value="" />
                         </div>
                         <div class="br"><br></div>
                         <div class="form-group">
-                            <input type="button" class="btnSubmit" value="Prijavi se" />
+                            <input type="button" @click="login()" value="Prijavi se" />
                         </div>
                     </form>
                     <div class="reg">
@@ -31,6 +31,32 @@
 </template>
 
 <script>
+import { firebase } from '@/firebase';
+
+export default {
+    name: "Login-reg",
+    data() {
+        return {
+            username: "",
+            password: ""
+        }
+    },
+    methods : {
+        login() {
+            console.log("login...")
+
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(this.username, this.password)
+                .then(function(result) {
+                    console.log("Uspjesno", result);
+                })
+                .catch(function(e) {
+                    console.log("greska", e)
+                })
+        },
+    },
+}
 </script>
 
 
