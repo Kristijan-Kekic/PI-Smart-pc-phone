@@ -5,7 +5,7 @@
     <img :src="info.url">
   </div>
   <div class="card-body">
-    <h5 class="card-title">Naziv : {{info.naziv}} <br> Procesor: {{info.procesor}} <br> Grafička kartica: {{info.graficka}} <br> Radna memorija: {{info.ram}} <br> Pohrana: {{info.hd}} <br> Cijena: {{info.cijena}} kn <br>
+    <h5 class="card-title">Model : {{info.proizvodac}} <br> Model: {{info.proizvodac}} <br> Pohrana: {{info.pohrana}} <br> Ekran: {{info.ekran}} <br> Baterija: {{info.baterija}} <br> Cijena: {{info.cijena}} kn
     <input type="button" @click="deleteWishlist(info.id)" value="Ukloni iz liste želja"/>
     </h5>
   </div>
@@ -21,7 +21,7 @@ import { db } from '@/firebase.js'
 
 export default {
   props: ['info'],
-  name : 'Proizvod_wishpc',
+  name : 'Proizvod_wishmob',
   data: function() {
     return {
       store,
@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     deleteWishlist(id) {
-    db.collection("wishpcs").doc(id).delete().then(() => {
+    db.collection("wishmobs").doc(id).delete().then(() => {
+    console.log("Document successfully deleted!");
     }).catch((error) => {
     console.error("Error removing document: ", error);
 });

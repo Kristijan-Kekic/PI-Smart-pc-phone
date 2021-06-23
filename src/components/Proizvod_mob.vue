@@ -18,6 +18,7 @@
 
 <script>
 import store from '@/store.js'
+import { db } from '@/firebase.js'
 export default {
   props: ['info'],
   name : 'Proizvod_mob',
@@ -25,8 +26,34 @@ export default {
     return {
       store,
     }
+  },
+  methods: {
+      newWishlist() {
+
+      db.collection("wishmobs").add({
+        id: this.info.id,
+        proizvodac: this.info.proizvodac,
+        preferenca: this.info.preferenca,
+        ekran: this.info.ekran,
+        baterija: this.info.baterija,
+        pohrana: this.info.pohrana,
+        cijena: parseInt(this.info.cijena),
+        user: this.store.currentUser,
+        url: this.info.url
+      })
+      .then(() => {
+        console.log("dobar")
+      })
+      .catch((e) => {
+        console.log("ne radi", e)
+      }) 
+
+
+    }
   }
 }
+
+  
 </script>
 
 <style scoped>

@@ -81,18 +81,6 @@
                   <p class="naslov">Računala na raspolaganju</p>    
                   </div>
 
-                    <div class="col-lg"></div>
-
-                    <div class="col-lg" style="margin-right:50px;">
-                    <div class="s-prema">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Sortiraj prema:</option>
-                        <option value="1">Uzlazno</option>
-                        <option value="2">Silazno</option>
-                      
-                      </select>
-                    </div>
-                    </div>
               </div>
 
 

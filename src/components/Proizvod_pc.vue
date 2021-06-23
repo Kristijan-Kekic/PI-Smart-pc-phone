@@ -39,9 +39,16 @@ export default {
     newWishlist() {
 
       db.collection("wishpcs").add({
+        id: this.info.id,
+        naziv: this.info.naziv,
         namjena: this.info.namjena,
+        procesor: this.info.procesor,
+        graficka: this.info.graficka,
+        ram: this.info.ram,
+        hd: this.info.hd,
         cijena: this.info.cijena,
-        user: this.store.currentUser
+        user: this.store.currentUser,
+        url: this.info.url
       })
       .then(() => {
         console.log("dobar")

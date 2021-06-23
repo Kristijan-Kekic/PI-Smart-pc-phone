@@ -5,39 +5,10 @@
    <div id="wl" class="col-4"><br>Moraš se ulogirati da možeš dodavati stvari u svoju listu želja!</div>
    <div class="col-4"></div>
  </div>
- <form @submit.prevent="postNewMob" class="form-inline mb-5">
-  <div class="form-group">
-   <croppa :width="100" :height="100" v-model="slikaref"> </croppa>
- </div>
- <div class="form-group">
-   <label for="proizvodac">proizvodac</label>
-   <input v-model="proizvodac" type="text" class="form-control ml-2" id="proizvodac">
- </div>
- <div class="form-group">
-   <label for="preferenca">preferenca</label>
-   <input v-model="preferenca" type="text" class="form-control ml-2" id="preferenca">
- </div>
- <div class="form-group">
-   <label for="pohrana">pohrana</label>
-   <input v-model="pohrana" type="text" class="form-control ml-2" id="pohrana">
- </div>
- <div class="form-group">
-   <label for="ekran">ekran</label>
-   <input v-model="ekran" type="text" class="form-control ml-2" id="ekran">
- </div>
- <div class="form-group">
-   <label for="baterija">baterija</label>
-   <input v-model="baterija" type="text" class="form-control ml-2" id="baterija">
- </div>
- <div class="form-group">
-   <label for="cijena">cijena</label>
-   <input v-model="cijena" type="number" class="form-control ml-2" id="cijena">
- </div>
- <button type="sumbit" class="btn btn primary ml-2">stavi</button>
- </form>
  <div class="col-lg-12" style="margin-bottom:15px;">
   <div class="row justify-content-center">
     <Proizvod_wishpc v-for="pc in filteredwishpcs" :key="pc.id" :info="pc" />
+    <Proizvod_wishmob v-for="mob in filteredwishmobs" :key="mob.id" :info="mob" />
      </div>
   </div>  
 </div>  
@@ -45,85 +16,50 @@
 
 <script>
 import store from '@/store.js'
-import { db , storage} from '@/firebase.js'
+import { db } from '@/firebase.js'
 import Proizvod_wishpc from '@/components/Proizvod_wishpc.vue'
+import Proizvod_wishmob from '@/components/Proizvod_wishmob.vue'
 
 export default {
   name: 'Wishlist',
   data() { 
     return {
       store,
+      wishpcs : [],
       wishmobs : [],
-      proizvodac: "",
-      url: "",
-      preferenca: "",
-      pohrana: "",
-      ekran: "",
-      baterija: "",
-      cijena: "",
-      slikaref: null
     }
   },
   components:{
-    Proizvod_wishpc
+    Proizvod_wishpc,
+    Proizvod_wishmob
 
   },
 mounted() {
     this.getWishPcs();
+    this.getWishMobs();
   },
 
   computed: {
    filteredwishpcs() {
-     return this.wishpcs
+     return this.filterUserPc(this.wishpcs)
+   },
+
+   filteredwishmobs() {
+     return this.filterUserMob(this.wishmobs)
    },
   },
 
   methods: {
 
-    postNewMob() {
-      console.log("k")
-
-      this.slikaref.generateBlob((blobData) => {
-        let slikaIme = "mobiteli/" + Date.now() + ".png";
-
-        storage.ref(slikaIme).put(blobData).then(result => {
-          result.ref.getDownloadURL().then(url => {
-            console.log(url)
-
-            db.collection("mobs").add({
-            url: url,
-            proizvodac: this.proizvodac,
-            pohrana: this.pohrana,
-            ekran: this.ekran,
-            preferenca: this.preferenca,
-            baterija: this.baterija,
-            cijena: this.cijena,
-            })
-            .then((doc) =>{
-            console.log("yey", doc)
-            })
-            .catch((e) => {
-              console.log(e)
-            })
-          })
-        })
-        .catch(e => {
-          console.error(e)
-        })
-      });
-
-      return;
+    filterUserPc: function(wishpcs) {
+      let user = this.store.currentUser
+      return wishpcs.filter(wishpc => wishpc.user == user);
     },
 
-    test(id) {
-      db.collection('wishpcs').doc(id).delete()
-      
+    filterUserMob: function(wishmobs) {
+      let user = this.store.currentUser
+      return wishmobs.filter(wishmob => wishmob.user == user);
     },
-
-    filterUser: function(wishpcs) {
-    let user = this.store.currentUser
-    return wishpcs.filter(wishpc => wishpc.user == user);
-  },
 
     getWishPcs() {
 
@@ -136,9 +72,39 @@ mounted() {
 
           this.wishpcs.push({
              id: doc.id,
+             naziv: data.naziv,
              namjena: data.namjena,
-             cijena: data.cijena,
-             procesor: data.proc
+             procesor: data.procesor,
+             graficka: data.graficka,
+             ram: data.ram,
+             hd: data.hd,
+             cijena: parseInt(data.cijena),
+             url: data.url,
+             user: data.user,
+          })
+        })
+      })
+    },
+
+    getWishMobs() {
+
+      db.collection('wishmobs')
+      .get()
+      .then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.wishmobs.push({
+            id: doc.id,
+            proizvodac: data.proizvodac,
+            preferenca: data.preferenca,
+            ekran: data.ekran,
+            baterija: data.baterija,
+            pohrana: data.pohrana,
+            cijena: parseInt(data.cijena),
+            url: data.url,
+            user: data.user
           })
         })
       })
