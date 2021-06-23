@@ -30,7 +30,6 @@ export default {
   methods: {
     deleteWishlist(id) {
     db.collection("wishmobs").doc(id).delete().then(() => {
-    console.log("Document successfully deleted!");
     }).catch((error) => {
     console.error("Error removing document: ", error);
 });

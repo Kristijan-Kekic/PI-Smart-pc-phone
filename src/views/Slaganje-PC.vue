@@ -42,10 +42,10 @@
               <br>
                   
               <img src="../assets/images/ram.png">
-              
-              <select v-model="productRAM.selectedRAM">
-                <option v-bind:value="{id: RAM.id, naziv: RAM.naziv, radmemorija: RAM.radmemorija, cijena: RAM.cijena}" v-for="RAM in filterram" :key=RAM.id>
-                  {{RAM.radmemorija}}</option>
+              <br>
+              <select style="width:200px;" v-model="productRAM.selectedRAM">
+                <option v-bind:value="{naziv: RAM.naziv, cijena: RAM.cijena}" v-for="RAM in filterram" :key=RAM.id>
+                  {{RAM.naziv}}</option>
               </select> 
               
               </div>  
@@ -59,16 +59,17 @@
 
                <p>Napredno pretrazivanje</p>
               <form id="filterGPU" class="col">
-                <input v-model="store.GPUFilter" class="form-control-mr-sm-2" type="search" placeholder="Npr. amd, nvidia"/>
+                <input v-model="store.GPUFilter" class="form-control-mr-sm-2" type="search" placeholder="Npr. geforce, radeon"/>
               </form>
                 <span>Odabrani filter: {{ store.GPUFilter }}</span>
                 <br>
                
                 <img src="../assets/images/gpu.png">
+                <br>
                 
-                <select v-model="productGPU.selectedGPU">
-                <option v-bind:value="{id: GPU.id, naziv: GPU.naziv, graprocesor: GPU.graprocesor, cijena: GPU.cijena}" v-for="GPU in filtergpu" :key=GPU.id>
-                  {{GPU.graprocesor}}</option>
+                <select style="width:200px;" v-model="productGPU.selectedGPU">
+                <option v-bind:value="{naziv: GPU.naziv, cijena: GPU.cijena}" v-for="GPU in filtergpu" :key=GPU.id>
+                  {{GPU.naziv}}</option>
               </select> 
                 
                 
@@ -87,13 +88,13 @@
                 <span>Odabrani filter: {{ store.CPUFilter }}</span>
                 <br>
                
-              <!-- <img src="../assets/images/cpu.png"> -->
+              <img src="../assets/images/cpu.png">
               
-         <br>          
+              <br>          
             
-              <select v-model="productCPU.selectedCPU">
-                <option v-bind:value="{id: cpu.id, naziv: cpu.naziv, procesor: cpu.procesor, cijena: cpu.cijena}" v-for="cpu in filtercpu" :key=cpu.id>
-                  {{cpu.procesor}}</option>
+              <select style="width:200px;" v-model="productCPU.selectedCPU">
+                <option v-bind:value="{naziv: cpu.naziv, cijena: cpu.cijena, socket: cpu.socket}" v-for="cpu in filtercpu" :key=cpu.id>
+                  {{cpu.naziv}}</option>
               </select> 
                 
             
@@ -115,10 +116,10 @@
                 <br>
                
                 <img src="../assets/images/maticna.png"> 
-               
-                <select v-model="productMaticna.selectedMaticna">
-                <option v-bind:value="{id: maticna.id, naziv: maticna.naziv, mploca: maticna.mploca, cijena: maticna.cijena}" v-for="maticna in filtermp" :key=maticna.id>
-                  {{maticna.mploca}}</option>
+                <br>
+                <select style="width:200px;" v-model="productMaticna.selectedMaticna">
+                <option v-bind:value="{naziv: maticna.naziv, cijena: maticna.cijena, socket: maticna.socket}" v-for="maticna in filtermp" :key=maticna.id>
+                  {{maticna.naziv}}</option>
               </select> 
                 
                 
@@ -136,16 +137,16 @@
                 <span>Odabrani filter: {{ store.PSUFilter }}</span>
                 <br>
                <img src="../assets/images/psu.jpg">
-               
-               <select v-model="productPSU.selectedPSU">
-                <option v-bind:value="{id: PSU.id, naziv: PSU.naziv, nap: PSU.nap, cijena: PSU.cijena}" v-for="PSU in filterpsu" :key=PSU.id>
-                  {{PSU.nap}}</option>
-              </select> 
+               <br>
+               <select style="width:200px;" v-model="productPSU.selectedPSU">
+                <option v-bind:value="{naziv: PSU.naziv, cijena: PSU.cijena, snaga: PSU.snaga}" v-for="PSU in filterpsu" :key=PSU.id>
+                  {{PSU.naziv}}</option>
+                </select> 
                 </div>  
 
 
              <div class="col-lg-3">  
-                <div class="box1">Memorija (HDD/SSD)</div>
+                <div class="box1">Pohrana (HDD/SSD)</div>
 
                 <p>Napredno pretrazivanje</p>
                 <form id="filterHD" class="col">
@@ -154,10 +155,11 @@
                 <span>Odabrani filter: {{ store.HDFilter }}</span>
                 <br>
                 <img src="../assets/images/hdd-sdd.jpg">
-                <select v-model="productMemorija.selectedMemorija">
-                <option v-bind:value="{id: memorija.id, naziv: memorija.naziv, mem: memorija.mem, cijena: memorija.cijena}" v-for="memorija in filterhd" :key=memorija.id>
-                  {{memorija.mem}}</option>
-              </select> 
+                <br>
+                <select style="width:200px;" v-model="productMemorija.selectedMemorija">
+                <option v-bind:value="{naziv: memorija.naziv, cijena: memorija.cijena}" v-for="memorija in filterhd" :key=memorija.id>
+                  {{memorija.naziv}}</option>
+                </select> 
                 <br>
             </div>    
             
@@ -181,40 +183,37 @@
             <div class="row justify-content-center"> 
             <div class="box3">
            <p>RAM</p>
-          <pre>Proizvođač : {{productRAM.selectedRAM.naziv}}</pre>
-            <pre>Specifikacija : {{productRAM.selectedRAM.radmemorija}}</pre>
-            <pre>Cijena: {{productRAM.selectedRAM.cijena}} kn </pre>
+          <pre>Model : {{productRAM.selectedRAM.naziv}}</pre>
+            <pre>Cijena : {{productRAM.selectedRAM.cijena}} kn </pre>
           </div>
           
            <div class="box3"><p>GPU</p>
-            <pre>Proizvođač : {{productGPU.selectedGPU.naziv}}</pre>
-            <pre>Specifikacija : {{productGPU.selectedGPU.graprocesor}}</pre>
-            <pre>Cijena: {{productGPU.selectedGPU.cijena }} kn </pre>
+            <pre>Model : {{productGPU.selectedGPU.naziv}}</pre>
+            <pre>Cijena : {{productGPU.selectedGPU.cijena }} kn </pre>
             </div>
 
            <div class="box3"><p>CPU</p>
-            <pre>Proizvođač : {{productCPU.selectedCPU.naziv}}</pre>
-            <pre>Specifikacija : {{productCPU.selectedCPU.procesor}}</pre>
-            <pre>Cijena: {{productCPU.selectedCPU.cijena}} kn </pre>
+            <pre>Model : {{productCPU.selectedCPU.naziv}}</pre>
+            <pre>Socket : {{productCPU.selectedCPU.socket}}</pre>
+            <pre>Cijena : {{productCPU.selectedCPU.cijena}} kn </pre>
            </div>
           </div>
 
           <div class="row justify-content-center">  
           
           <div class="box3"><p>Matična ploča</p>
-            <pre>Proizvođač : {{productMaticna.selectedMaticna.naziv}}</pre>
-            <pre>Specifikacija : {{productMaticna.selectedMaticna.mploca}}</pre>
-            <pre>Cijena: {{productMaticna.selectedMaticna.cijena}} kn </pre>
+            <pre>Model : {{productMaticna.selectedMaticna.naziv}}</pre>
+            <pre>Socket : {{productMaticna.selectedMaticna.socket}}</pre>
+            <pre>Cijena : {{productMaticna.selectedMaticna.cijena}} kn </pre>
            </div>
            <div class="box3"><p>PSU</p>
-            <pre>Proizvođač : {{productPSU.selectedPSU.naziv}}</pre>
-            <pre>Specifikacija : {{productPSU.selectedPSU.nap}}</pre>
-            <pre>Cijena: {{productPSU.selectedPSU.cijena}} kn</pre>
+            <pre>Model : {{productPSU.selectedPSU.naziv}}</pre>
+            <pre>Snaga : {{productPSU.selectedPSU.snaga}} W</pre>
+            <pre>Cijena : {{productPSU.selectedPSU.cijena}} kn</pre>
           </div>
            <div class="box3"><p>HDD/SSD</p>
-            <pre>Proizvođač : {{productMemorija.selectedMemorija.naziv}}</pre>
-            <pre>Specifikacija : {{productMemorija.selectedMemorija.mem}}</pre>
-            <pre>Cijena: {{productMemorija.selectedMemorija.cijena}} kn </pre>
+            <pre>Model : {{productMemorija.selectedMemorija.naziv}}</pre>
+            <pre>Cijena : {{productMemorija.selectedMemorija.cijena}} kn </pre>
               </div>
            
             </div>
@@ -233,9 +232,6 @@
       </div>
       </div>
     
-    
-    
-     <!--<img src="../assets/ikone/x-circle.svg" width="20" height="20" style="margin-bottom:5px;">-->
      
           </div>
         </div>
@@ -248,6 +244,7 @@
 <script>
   import Natrag from '@/components/Natrag.vue';
   import store from "@/store";
+  import { db } from '@/firebase.js'
   
   export default {
   name: 'Slaganje-PC',
@@ -260,122 +257,71 @@
       selectedRAM: {
         id: 1,
         naziv: 'Nije odabrano',
-        radmemorija: 'Nije odabrano',
         cijena: '0'
         
       }
     },
   
-    RAMs: [
-      {id: 0, naziv:'Nije odabrano' , radmemorija:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'aaaa' , radmemorija:'r', cijena: 100 },
-      {id: 2, naziv:'bbbb' , radmemorija:'r', cijena: 0 },
-      {id: 3, naziv:'cccc' , radmemorija:'r', cijena: 100 },
-      {id: 4, naziv:'aaab' , radmemorija:'r', cijena: 0 },
-      {id: 5, naziv:'ccdd' , radmemorija:'r', cijena: 0 },
-      
-    ],
+    RAMs: [],
 
 productGPU: {
       selectedGPU: {
         id: 1,
         naziv: 'Nije odabrano',
-        graprocesor: 'Nije odabrano',
         cijena: '0'
         
       }
     },
   
-    GPUs: [
-      {id: 0, naziv:'Nije odabrano' , graprocesor:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'g' , graprocesor:'g', cijena: 10 },
-      {id: 2, naziv:'g' , graprocesor:'g', cijena: 20 },
-      {id: 3, naziv:'g' , graprocesor:'g', cijena: 40 },
-      {id: 4, naziv:'g' , graprocesor:'g', cijena: 60 },
-      {id: 5, naziv:'g' , graprocesor:'g', cijena: 80 },
-      
-    ],
+    GPUs: [],
 
     productCPU: {
       selectedCPU: {
         id: 1,
         naziv: 'Nije odabrano',
-        procesor: 'Nije odabrano',
+        socket: 'Nije odabrano',
         cijena: '0'
         
       }
     },
   
-    CPUs: [
-      {id: 0, naziv:'Nije odabrano' , procesor:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'AMD' , procesor:'ryzen 5 3600 3.6ghz 17866 65w', cijena: 1500},
-      {id: 2, naziv:'AMD' , procesor:'ryzen 5 5600x 22180 65w', cijena: 2600},
-      {id: 3, naziv:'AMD' , procesor:'ryzen 7 3700x 3.6ghz 22798 65w', cijena: 2087},
-      {id: 4, naziv:'Intel' , procesor:'i9-10900x 3.7ghz 22849 165w', cijena: 4583},
-      {id: 5, naziv:'Intel' , procesor:'i3-10320 3.8ghz 10123 65w', cijena: 1378},
-      
-    ],
+    CPUs: [],
  
 
   productMaticna: {
       selectedMaticna: {
         id: 1,
         naziv: 'Nije odabrano',
-        mploca: 'Nije odabrano',
+        socket: 'Nije odabrano',
         cijena: '0'
         
       }
     },
   
-    maticnas: [
-      {id: 0, naziv:'Nije odabrano', mploca:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'mp' , mploca:'mp', cijena: 0 },
-      {id: 2, naziv:'mp' , mploca:'mp', cijena: 0 },
-      {id: 3, naziv:'mp' , mploca:'mp', cijena: 0 },
-      {id: 4, naziv:'mp' , mploca:'mp', cijena: 0 },
-      {id: 5, naziv:'mp' , mploca:'mp', cijena: 0 },
-      
-    ],
+    maticnas: [],
 
     productPSU: {
       selectedPSU: {
         id: 1,
         naziv: 'Nije odabrano',
-        nap: 'Nije odabrano',
+        snaga: 0,
         cijena: '0'
         
       }
     },
   
-    PSUs: [
-      {id: 0, naziv:'Nije odabrano' , nap:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'p' , nap:'p', cijena: 0 },
-      {id: 2, naziv:'p' , nap:'p', cijena: 0 },
-      {id: 3, naziv:'p' , nap:'p', cijena: 0 },
-      {id: 4, naziv:'p' , nap:'p', cijena: 0 },
-      {id: 5, naziv:'p' , nap:'p', cijena: 0 },
-      
-    ],
+    PSUs: [],
 
     productMemorija: {
       selectedMemorija: {
         id: 1,
         naziv: 'Nije odabrano',
-        mem: 'Nije odabrano',
         cijena: '0'
         
       }
     },
   
-    memorijas: [
-      {id: 0, naziv:'Nije odabrano' , mem:'Nije odabrano', cijena: 0},
-      {id: 1, naziv:'m' , mem:'m', cijena: 0 },
-      {id: 2, naziv:'m' , mem:'m', cijena: 0 },
-      {id: 3, naziv:'m' , mem:'m', cijena: 0 },
-      {id: 4, naziv:'m' , mem:'m', cijena: 0 },
-      {id: 5, naziv:'m' , mem:'m', cijena: 0 },
-      
-    ],
+    pohranas: [],
 
     }
 
@@ -384,7 +330,14 @@ productGPU: {
    components:{
       Natrag
   },
-
+  mounted() {
+    this.getRAM();
+    this.getGPU();
+    this.getCPU();
+    this.getMP();
+    this.getPSU();
+    this.getPohrana();
+  },
 
   computed: {
     filterram() {
@@ -403,39 +356,139 @@ productGPU: {
       return this.psu(this.PSUs)
     },
     filterhd() {
-      return this.hd(this.memorijas)
+      return this.hd(this.pohranas)
     }
   },
 
   methods: {
+
+    getRAM() {
+      db.collection('slaganje_ram').get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.RAMs.push({
+            id: doc.id,
+            naziv: data.naziv,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
+    getGPU() {
+     db.collection("slaganje_gpu").orderBy("naziv", "asc").get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.GPUs.push({
+            id: doc.id,
+            naziv: data.naziv,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
+    getCPU() {
+      db.collection('slaganje_cpu').orderBy("naziv", "asc").get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.CPUs.push({
+            id: doc.id,
+            naziv: data.naziv,
+            socket: data.socket,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
+    getMP() {
+      db.collection('slaganje_maticna').orderBy("naziv", "asc").get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.maticnas.push({
+            id: doc.id,
+            naziv: data.naziv,
+            socket: data.socket,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
+    getPSU() {
+      db.collection('slaganje_psu').orderBy("naziv", "asc").get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.PSUs.push({
+            id: doc.id,
+            naziv: data.naziv,
+            snaga: data.snaga,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
+    getPohrana() {
+      db.collection('slaganje_pohrana').orderBy("naziv", "asc").get().then((query) =>{
+        query.forEach((doc) => {
+
+          const data = doc.data();
+
+          this.pohranas.push({
+            id: doc.id,
+            naziv: data.naziv,
+            cijena: parseInt(data.cijena)
+          })
+        })
+      })
+      
+    },
+
     ram: function(RAMs) {
     let ramf = (this.store.RAMFilter).toLowerCase();
-    return RAMs.filter(ram => ram.naziv.indexOf(ramf) >= 0);
+    return RAMs.filter(ram => ram.naziv.toLowerCase().indexOf(ramf) >= 0);
     },
 
     gpu: function(GPUs) {
     let gpuf = (this.store.GPUFilter).toLowerCase();
-    return GPUs.filter(gpu => gpu.naziv.indexOf(gpuf) >= 0);
+    return GPUs.filter(gpu => gpu.naziv.toLowerCase().indexOf(gpuf) >= 0);
     },
 
     cpu: function(CPUs) {
     let cpuf = (this.store.CPUFilter).toLowerCase();
-    return CPUs.filter(cpu => cpu.naziv.indexOf(cpuf) >= 0);
+    return CPUs.filter(cpu => cpu.naziv.toLowerCase().indexOf(cpuf) >= 0);
     },
 
     mp: function(maticnas) {
     let mpf = (this.store.MPFilter).toLowerCase();
-    return maticnas.filter(maticna => maticna.naziv.indexOf(mpf) >= 0);
+    return maticnas.filter(maticna => maticna.naziv.toLowerCase().indexOf(mpf) >= 0);
     },
 
     psu: function(PSUs) {
     let psuf = (this.store.PSUFilter).toLowerCase();
-    return PSUs.filter(psu => psu.naziv.indexOf(psuf) >= 0);
+    return PSUs.filter(psu => psu.naziv.toLowerCase().indexOf(psuf) >= 0);
     },
 
-    hd: function(memorijas) {
+    hd: function(pohranas) {
     let hdf = (this.store.HDFilter).toLowerCase();
-    return memorijas.filter(hd => hd.naziv.indexOf(hdf) >= 0);
+    return pohranas.filter(pohrana => pohrana.naziv.toLowerCase().indexOf(hdf) >= 0);
     }
 
   },
@@ -472,7 +525,7 @@ productGPU: {
 
 
 .col-lg-3{
-  height: 100%;
+  height: 300px;
   margin:5px;
   border-color:lightgray;
   border-style: solid;
@@ -491,7 +544,7 @@ productGPU: {
 .col-lg-4{
 
 width:600px;
-height:150px;
+height:250px;
 
   margin:auto;
 }
@@ -551,6 +604,10 @@ margin:10px;
     }
 .list-group-item{
   height:150px;
+}
+
+.opcija {
+  width: 100px;
 }
 
 

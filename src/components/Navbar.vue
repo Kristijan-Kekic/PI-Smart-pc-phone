@@ -18,7 +18,7 @@
           <router-link class="rl" to="/Login-reg">Prijava/registracija
           </router-link>
       </div>
-      <div class="col-1"><a href ="#" @click.prevent="logout()">Logout</a> </div>
+      <div class="col-1" v-if="store.currentUser"><a href ="#" @click.prevent="logout()">Logout</a> </div>
       </nav>
     <router-view/>
   </div>
