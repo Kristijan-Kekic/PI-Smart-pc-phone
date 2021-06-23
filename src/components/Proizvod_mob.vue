@@ -1,10 +1,13 @@
 <template>
     
 <div class="card">
-  <div class="slika"></div>
+  <div class="slika"><img :src="info.url"></div>
   <div class="card-body">
-    <h5 class="card-title">Ime mob {{info.naslov}} <br> {{info.cijena}} <br> {{info.ekran}} <br>
-    <a href="#" class="btn btn-primary"><img src="../assets/ikone/cart.svg" width="20" height="20" style="margin-bottom:5px;"> Dodaj u listu želja</a>
+    <h5 class="card-title"> Model: {{info.proizvodac}} <br> Pohrana: {{info.pohrana}} <br> Ekran: {{info.ekran}} <br> Baterija: {{info.baterija}} <br> Cijena: {{info.cijena}} kn
+    <div class="form-group" v-if="store.currentUser">
+      <br>
+      <input type="button" @click="newWishlist()" value="Dodaj u wishlist"/> 
+    </div>
     </h5>
   </div>
 </div>
@@ -14,10 +17,15 @@
 </template>
 
 <script>
-
+import store from '@/store.js'
 export default {
   props: ['info'],
-  name : 'Proizvod_mob'
+  name : 'Proizvod_mob',
+  data: function() {
+    return {
+      store,
+    }
+  }
 }
 </script>
 
@@ -34,7 +42,7 @@ export default {
     margin-left: 0px;
     margin-right: 12px;
     width: 300px;
-    height: 400px;
+    height: 500px;
     display: inline-block;
     
 }

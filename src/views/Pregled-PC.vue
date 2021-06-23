@@ -213,7 +213,6 @@ export default {
         query.forEach((doc) => {
 
           const data = doc.data();
-          console.log(data)
 
           this.pcs.push({
              id: doc.id,

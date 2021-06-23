@@ -17,10 +17,24 @@
                                   
                     <div class="col-12">
                         <li class="list-group-item">Filteri</li> <br>
+                        <li class="list-group-item">Proizvođač</li>
+                        <br>
+                        <form id="searchProizvodac" class="col">
+                          <input v-model="store.searchProizvodac" class="form-control-mr-sm-2" type="search" placeholder="Npr. Huawei, Xiaomi"
+                          />
+                        </form>
+                        <br>
                         <li class="list-group-item">Preferenca</li>
                         <br>
                         <form id="searchPreferenca" class="col">
                           <input v-model="store.searchPreferenca" class="form-control-mr-sm-2" type="search" placeholder="Npr. svakodnevnica, kamera, perfomanse"
+                          />
+                        </form>
+                        <br>
+                        <li class="list-group-item">Pohrana</li>
+                        <br>
+                        <form id="searchMHD" class="col">
+                          <input v-model="store.searchMHD" class="form-control-mr-sm-2" type="search" placeholder="Npr. 32gb, 64gb"
                           />
                         </form>
                         <br>
@@ -112,85 +126,80 @@
 import Proizvod_mob from '@/components/Proizvod_mob.vue'
 import Natrag from '@/components/Natrag.vue'
 import store from '@/store.js'
-
-let mobs = [];
-
-mobs = [
-{
-  id: 1,
-  naslov: 'aaaa',
-  preferenca: 'kamera',
-  cijena: 1199,
-  baterija: '4500mah',
-  ekran: '6.1'
-},
-
-{
-  id: 2,
-  naslov: 'bbbb',
-  preferenca: 'perfomanse',
-  cijena: 699,
-  baterija: '5200mah',
-  ekran: '6.4'
-},
-
-{
-  id: 3,
-  naslov: 'cccc',
-  preferenca: 'svakodnevnica',
-  cijena: 399,
-  baterija: '3400mah',
-  ekran: '5.1'
-},
-
-{
-  id: 4,
-  naslov: 'dddd',
-  preferenca: 'svakodnevnica',
-  cijena: 799,
-  baterija: '4200mah',
-  ekran: '5.6'
-}
-
-
-];
+import { db } from '@/firebase.js'
 
 export default {
   name: 'Mobitel',
   data: function() {
     return {
-      mobs,
+      mobs : [],
       store,
       range : "1",
       range2 : "10000"
     };
   },
-  components:{
+components:{
       Proizvod_mob,
       Natrag,
   },
-  computed: {
+
+mounted() {
+    this.getMobs();
+  },
+
+computed: {
    filteredmobs() {
-     return this.filterCijenaMin(this.filterCijenaMax(this.filterPreferenca(this.filterEkran(this.filterBaterija(this.mobs)))))
+     return this.filterCijenaMin(this.filterCijenaMax(this.filterPreferenca(this.filterEkran(this.filterBaterija(this.filterProizvodac(this.filterMHD(this.mobs)))))))
    },
   },
 
-  methods: {
+methods: {
+  getMobs() {
+
+    db.collection('mobs').get().then((query) =>{
+      query.forEach((doc) => {
+
+        const data = doc.data();
+        console.log(data)
+
+        this.mobs.push({
+            id: doc.id,
+            proizvodac: data.proizvodac,
+            preferenca: data.preferenca,
+            ekran: data.ekran,
+            baterija: data.baterija,
+            pohrana: data.pohrana,
+            cijena: parseInt(data.cijena),
+            url: data.url
+          })
+        })
+      })
+    },
+
+  filterProizvodac: function(mobs) {
+    let pro = (this.store.searchProizvodac).toLowerCase();
+    return mobs.filter(mob => mob.proizvodac.toLowerCase().indexOf(pro) >= 0);
+  },
 
   filterPreferenca: function(mobs) {
     let pref = (this.store.searchPreferenca).toLowerCase();
-    return mobs.filter(mob => mob.preferenca.indexOf(pref) >= 0);
+    return mobs.filter(mob => mob.preferenca.toLowerCase().indexOf(pref) >= 0);
 
   },
 
   filterBaterija: function(mobs) {
     let bat = (this.store.searchBaterija).toLowerCase();
-    return mobs.filter(mob => mob.baterija.indexOf(bat) >= 0);
+    return mobs.filter(mob => mob.baterija.toLowerCase().indexOf(bat) >= 0);
   },
 
   filterEkran: function(mobs) {
     let ekr = (this.store.searchEkran).toLowerCase();
-    return mobs.filter(mob => mob.ekran.indexOf(ekr) >= 0);
+    return mobs.filter(mob => mob.ekran.toLowerCase().indexOf(ekr) >= 0);
+  },
+
+  filterMHD: function(mobs) {
+    let mhd = (this.store.searchMHD).toLowerCase();
+    return mobs.filter(mob => mob.pohrana.toLowerCase().indexOf(mhd) >= 0);
   },
 
   filterCijenaMin: function(mobs) {

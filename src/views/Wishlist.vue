@@ -5,33 +5,29 @@
    <div id="wl" class="col-4"><br>Moraš se ulogirati da možeš dodavati stvari u svoju listu želja!</div>
    <div class="col-4"></div>
  </div>
- <form @submit.prevent="postNewPc" class="form-inline mb-5">
+ <form @submit.prevent="postNewMob" class="form-inline mb-5">
   <div class="form-group">
    <croppa :width="100" :height="100" v-model="slikaref"> </croppa>
  </div>
  <div class="form-group">
-   <label for="namjena">namjena</label>
-   <input v-model="namjena" type="text" class="form-control ml-2" id="namjena">
+   <label for="proizvodac">proizvodac</label>
+   <input v-model="proizvodac" type="text" class="form-control ml-2" id="proizvodac">
  </div>
  <div class="form-group">
-   <label for="naziv">naziv</label>
-   <input v-model="naziv" type="text" class="form-control ml-2" id="naziv">
+   <label for="preferenca">preferenca</label>
+   <input v-model="preferenca" type="text" class="form-control ml-2" id="preferenca">
  </div>
  <div class="form-group">
-   <label for="graficka">graficka</label>
-   <input v-model="graficka" type="text" class="form-control ml-2" id="graficka">
+   <label for="pohrana">pohrana</label>
+   <input v-model="pohrana" type="text" class="form-control ml-2" id="pohrana">
  </div>
  <div class="form-group">
-   <label for="procesor">procesor</label>
-   <input v-model="procesor" type="text" class="form-control ml-2" id="procesor">
+   <label for="ekran">ekran</label>
+   <input v-model="ekran" type="text" class="form-control ml-2" id="ekran">
  </div>
  <div class="form-group">
-   <label for="cijena">ram</label>
-   <input v-model="ram" type="text" class="form-control ml-2" id="ram">
- </div>
- <div class="form-group">
-   <label for="cijena">hd</label>
-   <input v-model="hd" type="text" class="form-control ml-2" id="hd">
+   <label for="baterija">baterija</label>
+   <input v-model="baterija" type="text" class="form-control ml-2" id="baterija">
  </div>
  <div class="form-group">
    <label for="cijena">cijena</label>
@@ -57,14 +53,13 @@ export default {
   data() { 
     return {
       store,
-      wishpcs : [],
-      naziv: "",
+      wishmobs : [],
+      proizvodac: "",
       url: "",
-      namjena: "",
-      procesor: "",
-      graficka: "",
-      ram: "",
-      hd: "",
+      preferenca: "",
+      pohrana: "",
+      ekran: "",
+      baterija: "",
       cijena: "",
       slikaref: null
     }
@@ -85,29 +80,27 @@ mounted() {
 
   methods: {
 
-    postNewPc() {
+    postNewMob() {
       console.log("k")
 
       this.slikaref.generateBlob((blobData) => {
-        let slikaIme = "racunala/" + Date.now() + ".png";
+        let slikaIme = "mobiteli/" + Date.now() + ".png";
 
         storage.ref(slikaIme).put(blobData).then(result => {
           result.ref.getDownloadURL().then(url => {
             console.log(url)
 
-            db.collection("pcs").add({
+            db.collection("mobs").add({
             url: url,
-            naziv: this.naziv,
-            namjena: this.namjena,
-            proc: this.procesor,
-            graf: this.graficka,
-            ram: this.ram,
-            hd: this.hd,
+            proizvodac: this.proizvodac,
+            pohrana: this.pohrana,
+            ekran: this.ekran,
+            preferenca: this.preferenca,
+            baterija: this.baterija,
             cijena: this.cijena,
             })
             .then((doc) =>{
             console.log("yey", doc)
-            this.slikaref = null;
             })
             .catch((e) => {
               console.log(e)

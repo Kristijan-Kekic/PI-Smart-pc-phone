@@ -11,6 +11,8 @@ export default {
     searchPreferenca: '',
     searchBaterija: '',
     searchEkran: '',
+    searchProizvodac: '',
+    searchMHD: '',
 
     CPUFilter: '',
     GPUFilter: '',
