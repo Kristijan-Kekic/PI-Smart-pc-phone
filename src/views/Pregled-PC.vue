@@ -213,15 +213,18 @@ export default {
         query.forEach((doc) => {
 
           const data = doc.data();
+          console.log(data)
 
           this.pcs.push({
-             id: data.id,
+             id: doc.id,
+             naziv: data.naziv,
              namjena: data.namjena,
-             procesor: data.procesor,
-             graficka: data.graficka,
+             procesor: data.proc,
+             graficka: data.graf,
              ram: data.ram,
              hd: data.hd,
-             cijena: data.cijena
+             cijena: parseInt(data.cijena),
+             url: data.url
           })
         })
       })
@@ -235,22 +238,22 @@ export default {
 
   filterProc: function(pcs) {
     let proc = (this.store.searchProcesor).toLowerCase();
-    return pcs.filter(pc => pc.procesor.indexOf(proc) >= 0);
+    return pcs.filter(pc => pc.procesor.toLowerCase().indexOf(proc) >= 0);
   },
 
   filterGraf: function(pcs) {
     let graf = (this.store.searchGraficka).toLowerCase();
-    return pcs.filter(pc => pc.graficka.indexOf(graf) >= 0);
+    return pcs.filter(pc => pc.graficka.toLowerCase().indexOf(graf) >= 0);
   },
 
   filterRAM: function(pcs) {
     let ram = (this.store.searchRAM).toLowerCase();
-    return pcs.filter(pc => pc.ram.indexOf(ram) >= 0);
+    return pcs.filter(pc => pc.ram.toLowerCase().indexOf(ram) >= 0);
   },
 
   filterHD: function(pcs) {
     let hdsd = (this.store.searchHD).toLowerCase();
-    return pcs.filter(pc => pc.hd.indexOf(hdsd) >= 0);
+    return pcs.filter(pc => pc.hd.toLowerCase().indexOf(hdsd) >= 0);
   },
 
   filterCijenaMin: function(pcs) {

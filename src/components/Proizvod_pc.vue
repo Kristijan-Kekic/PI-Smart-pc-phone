@@ -1,11 +1,14 @@
 <template>
     
 <div class="card">
-  <div class="slika"></div>
+  <div class="slika">
+    <img :src="info.url">
+    </div>
   <div class="card-body">
-    <h5 class="card-title">Ime pca {{info.naslov}} <br> {{info.cijena}} <br> {{info.procesor}} <br>
+    <h5 class="card-title">Naziv : {{info.naziv}} <br> Procesor: {{info.procesor}} <br> Grafička kartica: {{info.graficka}} <br> Radna memorija: {{info.ram}} <br> Pohrana: {{info.hd}} <br> Cijena: {{info.cijena}} kn
     <div class="form-group" v-if="store.currentUser">
-      <input type="button" @click="newWishlist(info)" value="Dodaj u wishlist"/> 
+      <br>
+      <input type="button" @click="newWishlist()" value="Dodaj u wishlist"/> 
     </div>
     </h5>
   </div>
@@ -35,7 +38,7 @@ export default {
   methods: {
     newWishlist() {
 
-      db.collection("wishlist").add({
+      db.collection("wishpcs").add({
         namjena: this.info.namjena,
         cijena: this.info.cijena,
         user: this.store.currentUser
@@ -66,7 +69,7 @@ export default {
     margin-left: 0px;
     margin-right: 12px;
     width: 300px;
-    height: 400px;
+    height: 600px;
     display: inline-block;
     
 }
@@ -75,7 +78,7 @@ export default {
     border-width: 1px;
     border-color: lightgray;
     border-style: solid;
-    height:250px;
+    height:215px;
 }
 
 </style>
