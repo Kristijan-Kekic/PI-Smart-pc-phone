@@ -78,13 +78,22 @@
           
             <div class="row">
                   <div class="col-lg" style="margin-left:45px;">
-                  <p class="naslov">Računala na raspolaganju</p>    
+                  <p class="naslov">Računala na raspolaganju</p>
+                      
                   </div>
 
-              </div>
+            </div>
+          </div>
+          <div class="row">
 
+          <div class="row justify-content-center">
+
+              <div class="col-lg-3">
+                <div class="box1">Prvo računalo</div>
+              </div> 
 
             </div>
+          </div>
           </div>
 
           <div class="row">
@@ -102,11 +111,7 @@
 
   </div>
 
-</div>      
-  
-  
-
-  
+  </div>
 
 </template>
 
