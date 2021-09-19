@@ -77,12 +77,152 @@
             <div class="col-lg-12">
           
             <div class="row">
-                  <div class="col-lg" style="margin-left:45px;">
+                  <div class="col-lg" style="margin-left:45px; margin-top:10px;">
                   <p class="naslov">Mobiteli na raspolaganju</p>    
                   </div>
 
               </div>
 
+
+            </div>
+          </div>
+
+          <div class="row">
+
+          <div class="row justify-content-center">
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>iPhone SE (2020)</b></div>
+                <p>4,7" LCD HD, 12MP / 7MP, 3GB / 64GB, 1821 mAh
+                </p>
+                <br>
+                  <img class="fit" src="../assets/images/iPhoneSE.jpg">
+                <br>
+                <p class="cijena">Cijena: 3.998,95 Kn
+                </p>
+                
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>iPhone 12 Pro</b></div>
+                <p>6.1" Super Retina XDR OLED, 12+12+12/12MP, 6GB / 128GB, 2815 mAh
+                </p>
+                <br>
+                  <img class="fit" src="../assets/images/iPhone12.jpg">
+                <br>
+                <p class="cijena">Cijena: 9.262,11 Kn
+                </p>
+
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Samsung Galaxy A02s</b></div>
+                <p>6.5" 720x1600px, Octa-Core 1.8GHz, 3GB RAM, 32GB Memorija, Dual SIM, Android 10
+                </p>
+                <br>
+                  <img class="fit" src="../assets/images/SamGalA02.jpg">
+                <br>
+
+                <p class="cijena">Cijena: 1.156,84 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+            </div>
+          </div>
+           <div class="row">
+
+          <div class="row justify-content-center">
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Samsung Galaxy Z Fold 3</b></div>
+                <p>7.6" 1768x2208px, Octa-Core 2.84GHz, 12GB RAM, 256GB Memorija, 5G, Android 11
+                </p>
+                <br>
+                  <img class="fit" src="../assets/images/SamGalZFold.jpg">
+                <br>
+                <p class="cijena">14.735,79 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Xiaomi Redmi Note 10</b></div>
+                <p>6.43" 1080x2400px, Octa-Core 2.2GHz, 4GB RAM, 128GB Memorija, Dual SIM, 4G/LTE
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/Xiaomi10.jpg">
+                <br>
+                <p class="cijena">Cijena: 1.683,16 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Xiaomi Mi 11</b></div>
+                <p>6.81" 1440x3200px, Octa-Core 2.84GHz, 8GB RAM, 256GB Memorija, Dual SIM
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/XiaomiMi.jpg">
+                <br>
+
+                <p class="cijena">Cijena: 6.209,47 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+            </div>
+          </div>
+           <div class="row">
+
+          <div class="row justify-content-center">
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Nokia G10</b></div>
+                <p>6.52" 720x1600px, Octa-Core 2.0GHz, 3GB RAM, 32GB Memorija, Dual SIM, 4G
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/NokiaG10.jpg">
+                <br>
+                <p class="cijena">Cijena: 1.120,47 Kn
+                </p>  
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Nokia XR20</b></div>
+                <p>6.67" 1080x2400px, Octa-Core 2.0GHz, 6GB RAM, 128GB Memorija, Dual SIM
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/NokiaXR20.jpg">
+                <br>
+                <p class="cijena">Cijena: 4.661,25 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Google Pixel 4a</b></div>
+                <p>5.81" 1080x2340px, Octa-Core 2.2GHz, 6GB RAM, 128GB Memorija, Single SIM, 4G/LTE
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/GooglePixel.jpg">
+                <br>
+                <p class="cijena">Cijena: 3.525,26 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
 
             </div>
           </div>
@@ -111,6 +251,7 @@
 </template>
 
 <script>
+
 import Proizvod_mob from '@/components/Proizvod_mob.vue'
 import Natrag from '@/components/Natrag.vue'
 import store from '@/store.js'
@@ -199,8 +340,9 @@ methods: {
 
   }
 }
-    
+
 </script>
+
 
 <style scoped src="@/assets/css/Mobiteli.css">
 </style>

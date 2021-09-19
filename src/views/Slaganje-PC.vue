@@ -46,6 +46,11 @@
               <select style="width:200px;" v-model="productRAM.selectedRAM">
                 <option v-bind:value="{naziv: RAM.naziv, cijena: RAM.cijena}" v-for="RAM in filterram" :key=RAM.id>
                   {{RAM.naziv}}</option>
+                  <option>2gb</option>
+                  <option>4gb</option>
+                  <option>6gb</option>
+                  <option>8gb</option>
+                  <option>12gb</option>
               </select> 
               
               </div>  
@@ -70,6 +75,11 @@
                 <select style="width:200px;" v-model="productGPU.selectedGPU">
                 <option v-bind:value="{naziv: GPU.naziv, cijena: GPU.cijena}" v-for="GPU in filtergpu" :key=GPU.id>
                   {{GPU.naziv}}</option>
+                  <option>GeForce</option>
+                  <option>Radeon</option>
+                  <option>MSI</option>
+                  <option>Gigabyte</option>
+                  <option>Sapphire</option>
               </select> 
                 
                 
@@ -95,6 +105,11 @@
               <select style="width:200px;" v-model="productCPU.selectedCPU">
                 <option v-bind:value="{naziv: cpu.naziv, cijena: cpu.cijena, socket: cpu.socket}" v-for="cpu in filtercpu" :key=cpu.id>
                   {{cpu.naziv}}</option>
+                  <option>Intel</option>
+                  <option>AMD</option>
+                  <option>Nvidia</option>
+                  <option>Hitachi</option>
+                  <option>IBM</option>
               </select> 
                 
             
@@ -120,6 +135,11 @@
                 <select style="width:200px;" v-model="productMaticna.selectedMaticna">
                 <option v-bind:value="{naziv: maticna.naziv, cijena: maticna.cijena, socket: maticna.socket}" v-for="maticna in filtermp" :key=maticna.id>
                   {{maticna.naziv}}</option>
+                  <option>Asus</option>
+                  <option>Intel</option>
+                  <option>Asrock</option>
+                  <option>Biostar</option>
+                  <option>Gigybyte</option>
               </select> 
                 
                 
@@ -141,6 +161,11 @@
                <select style="width:200px;" v-model="productPSU.selectedPSU">
                 <option v-bind:value="{naziv: PSU.naziv, cijena: PSU.cijena, snaga: PSU.snaga}" v-for="PSU in filterpsu" :key=PSU.id>
                   {{PSU.naziv}}</option>
+                  <option>300w</option>
+                  <option>500w</option>
+                  <option>600w</option>
+                  <option>700w</option>
+                  <option>1200w</option>
                 </select> 
                 </div>  
 
@@ -159,6 +184,11 @@
                 <select style="width:200px;" v-model="productMemorija.selectedMemorija">
                 <option v-bind:value="{naziv: memorija.naziv, cijena: memorija.cijena}" v-for="memorija in filterhd" :key=memorija.id>
                   {{memorija.naziv}}</option>
+                  <option>SSD</option>
+                  <option>HDD</option>
+                  <option>Optical Disk</option>
+                  <option>M.2 NVMe</option>
+                  <option>Vanjski</option>
                 </select> 
                 <br>
             </div>    

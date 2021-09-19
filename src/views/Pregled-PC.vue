@@ -77,23 +77,158 @@
             <div class="col-lg-12">
           
             <div class="row">
-                  <div class="col-lg" style="margin-left:45px;">
+                  <div class="col-lg" style="margin-left:45px; margin-top:10px;">
                   <p class="naslov">Računala na raspolaganju</p>
                       
                   </div>
 
             </div>
           </div>
+          </div>
           <div class="row">
 
           <div class="row justify-content-center">
 
-              <div class="col-lg-3">
-                <div class="box1">Prvo računalo</div>
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Alarco Intel i5</b></div>
+                <p>3.10GHz,8GB Ram,1TB Hard Drive,Windows 10 pro,WiFi Ready,Video Card Nvidia GTX 650 1GB, 3 RGB Fans with Remote 
+                </p>
+                <br>
+                  <img src="../assets/images/alarco.jpg" width="100px">
+                <br>
+                <p class="cijena">Cijena: 3.395,17 Kn
+                </p>
+                
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+              <!--<div class="modal-container" id="modal_container">
+                <div class="modal">
+                  <h1>Dodano!</h1>
+                  <p>Vaš proizvod je dodan u listi želja.</p>
+                  <button id="close">Zatvori</button>
+              </div>
+              </div> -->
+              </div>
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Legacy Gaming PC</b></div>
+                <p>AMD Ryzen 5 2600, B450 Motherboard, 120GB SSD + 1TB 7200RPM 3.5' SATA Hard Drive, NVIDIA GeForce GTX 1660 SUPER 
+                </p>
+                <br>
+                  <img src="../assets/images/legacy.png" width="130px">
+                <br>
+                <p class="cijena">Cijena: 6.406,04 Kn
+                </p>
+
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Prism II Gaming PC</b></div>
+                <p>AMD Ryzen 9 3900X 3.8GHz, RTX 3090 24GB, 32GB 3600mhz RGB Memory, 1TB Gen4 SSD, 360mm AIO  
+                </p>
+                <br>
+                  <img src="../assets/images/prism.jpg" width="118px">
+                <br>
+
+                <p class="cijena">Cijena: 26.905,56 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
               </div> 
 
             </div>
           </div>
+           <div class="row">
+
+          <div class="row justify-content-center">
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Lenovo V50s SFF</b></div>
+                <p>Intel Core i5 10400 up to 4.3GHz, 8GB DDR4, 256GB NVMe SSD, Intel UHD Graphics 630, no ODD
+                </p>
+                <br>
+                  <img class="fit" src="../assets/images/Lenovo.jpg">
+                <br>
+                <p class="cijena">Cijena: 4.056,25 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Asus ExpertCenter</b></div>
+                <p>Intel Core i3 10100 up to 4.3GHz, 8GB DDR4, 256GB NVMe SSD + 1TB HDD, Intel UHD Graphics 630, DVD
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/Asus.jpg">
+                <br>
+                <p class="cijena">Cijena: 3.918,75 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Dell Optiplex 3080 MT</b></div>
+                <p>Intel Core i3 10100 up to 4.3GHz, 8GB DDR4, 256GB NVMe SSD, Intel UHD Graphics 630, DVD, Linux
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/Dell.jpg">
+                <br>
+
+                <p class="cijena">Cijena: 4.053,88 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+            </div>
+          </div>
+           <div class="row">
+
+          <div class="row justify-content-center">
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Notebook Razer Book 13</b></div>
+                <p>13.4" FHD Touch, Intel Core i7 1165G7 up to 4.7GHz, 16GB DDR4, 256GB NVMe SSD, Intel Iris Xe Graphics, no ODD
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/razer.jpg">
+                <br>
+                <p class="cijena">Cijena: 13.446,13 Kn
+                </p>  
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Notebook HP 255 G7</b></div>
+                <p>15.6" FHD, AMD Athlon Silver 3050U up to 3.2GHz, 8GB DDR4, 256GB M2 SSD, AMD Radeon Graphics, no ODD
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/HP.jpg">
+                <br>
+                <p class="cijena">Cijena: 2.998,95 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+              <div id="vrste" class="col-lg-3">
+                <div class="box1"><b>Acer Chromebook 315</b></div>
+                <p>15.6" FHD, Intel Celeron N4020 up to 2.8GHz, 4GB DDR4, 64GB eMMC, Intel UHD Graphics 600, no ODD, Chrome OS
+                </p>
+                <br>
+               <img class="fit" src="../assets/images/Acer.jpg">
+                <br>
+                <p class="cijena">Cijena: 2.354,00 Kn
+                </p>
+                <a href="Wishlist"><button class="button">DODAJ</button></a>
+
+              </div> 
+
+            </div>
           </div>
 
           <div class="row">
@@ -116,6 +251,7 @@
 </template>
 
 <script>
+
 import Proizvod_pc from '@/components/Proizvod_pc.vue'
 import Natrag from '@/components/Natrag.vue'
 import store from '@/store.js'
@@ -258,8 +394,20 @@ export default {
 
   }
 }
-    
+  /*const open = document.getElementById('open')
+  const modal_container = document.getElementById('modal_container')
+  const close = document.getElementById('close')
+
+  open.addEventListener('click', ()=>{
+    modal_container.classList.add('show');
+  })
+
+  close.addEventListener('click', ()=>{
+    modal_container.classList.remove('show');
+  })*/
 </script>
+
+
 
 <style scoped src="@/assets/css/PC.css">
 </style>
